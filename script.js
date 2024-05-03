@@ -1,22 +1,22 @@
 function verificarRespostas() {
     var respostasCorretas = [
-      "a", // Resposta correta da pergunta 1
+      "b", // Resposta correta da pergunta 1
       "a", // Resposta correta da pergunta 2
       "a", // Resposta correta da pergunta 3
-      "a", // Resposta correta da pergunta 4
-      "a", // Resposta correta da pergunta 5
+      "c", // Resposta correta da pergunta 4
+      "b", // Resposta correta da pergunta 5
       "a", // Resposta correta da pergunta 6
-      "a", // Resposta correta da pergunta 7
-      "a", // Resposta correta da pergunta 8
-      "a", // Resposta correta da pergunta 9
+      "e", // Resposta correta da pergunta 7
+      "c", // Resposta correta da pergunta 8
+      "d", // Resposta correta da pergunta 9
       "a", // Resposta correta da pergunta 10
-      "a", // Resposta correta da pergunta 11
+      "c", // Resposta correta da pergunta 11
       "a", // Resposta correta da pergunta 12
-      "a", // Resposta correta da pergunta 13
+      "c", // Resposta correta da pergunta 13
       "a", // Resposta correta da pergunta 14
       "a", // Resposta correta da pergunta 15
       "a", // Resposta correta da pergunta 16
-      "a", // Resposta correta da pergunta 17
+      "b", // Resposta correta da pergunta 17
       // Insira o resto das respostas corretas aqui
     ];
   

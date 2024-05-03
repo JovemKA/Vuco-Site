@@ -1,3 +1,7 @@
+function marcarOpcao(pergunta, opcao) {
+  document.querySelector("input[name=" + pergunta + "][value=" + opcao + "]").checked = true;
+}
+
 function verificarRespostas() {
     var respostasCorretas = [
       "b", // Resposta correta da pergunta 1

@@ -30,7 +30,7 @@ function verificarRespostas() {
         feedbackDiv.innerHTML = "<span class='correct'>&#x2714; Correto!</span>";
         pontuacao++;
       } else {
-        feedbackDiv.innerHTML = "<span class='incorrect'>&#x2718; Errado! A resposta correta era: " + respostasCorretas[i] + "</span>";
+        feedbackDiv.innerHTML = "<span class='incorrect'>&#x2718; Errado! A resposta correta era: " + respostasCorretas[i] + ") </span>";
       }
     }
   

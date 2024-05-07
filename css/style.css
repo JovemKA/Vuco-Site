@@ -60,4 +60,14 @@ button:hover {
   margin-top: 30px;
 }
 
-  
+/* Estilos para opções de resposta corretas */
+.option.correct {
+  color: green;
+  font-weight: bold;
+}
+
+/* Estilos para opções de resposta incorretas */
+.option.incorrect {
+  color: red;
+  font-weight: bold;
+}

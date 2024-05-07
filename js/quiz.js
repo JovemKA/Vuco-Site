@@ -65,15 +65,22 @@ function exibirQuiz(perguntas) {
       // Altera a seleção da alternativa
       this.querySelector("input").checked = true;
 
+      // Remove as classes de feedback anteriores
+      document.querySelectorAll(".option").forEach(function (opt) {
+        opt.classList.remove("correct", "incorrect");
+      });
+
       // Verifica se a resposta selecionada está correta
       if (opcaoSelecionada === respostaCorreta) {
         feedbackDiv.innerHTML =
           "<span class='correct'>&#x2714; Correto!</span>";
+        this.classList.add("correct");
       } else {
         feedbackDiv.innerHTML =
           "<span class='incorrect'>&#x2718; Errado! A resposta correta era: " +
           respostaCorreta +
-          "</span>";
+          ") </span>";
+        this.classList.add("incorrect");
       }
     });
   });

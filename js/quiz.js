@@ -21,13 +21,19 @@ function exibirQuiz(perguntas) {
       var opcaoItem = document.createElement("li");
       opcaoItem.classList.add("option");
       opcaoItem.setAttribute("data-pergunta", index + 1); // Adiciona um atributo para identificar a pergunta
-      opcaoItem.setAttribute("data-opcao", opcaoIndex + 1); // Adiciona um atributo para identificar a opção
-      opcaoItem.setAttribute("data-resposta", pergunta.resposta); // Adiciona um atributo para identificar a resposta correta
+      opcaoItem.setAttribute(
+        "data-opcao",
+        String.fromCharCode(97 + opcaoIndex)
+      ); // Adiciona um atributo para identificar a opção (a, b, c, ...)
+      opcaoItem.setAttribute(
+        "data-resposta",
+        pergunta.resposta_correta.toLowerCase()
+      ); // Adiciona um atributo para identificar a resposta correta
       opcaoItem.innerHTML =
         '<input type="radio" name="q' +
         (index + 1) +
         '" value="' +
-        (opcaoIndex + 1) +
+        String.fromCharCode(97 + opcaoIndex) + // Define o valor como a letra correspondente (a, b, c, ...)
         '" /> ' +
         opcao;
       opcoesList.appendChild(opcaoItem);
@@ -35,6 +41,12 @@ function exibirQuiz(perguntas) {
 
     // Adiciona a lista de opções à pergunta
     perguntaElement.appendChild(opcoesList);
+
+    // Adiciona o espaço para feedback
+    var feedbackDiv = document.createElement("div");
+    feedbackDiv.classList.add("feedback");
+    feedbackDiv.id = "feedback" + (index + 1);
+    perguntaElement.appendChild(feedbackDiv);
 
     // Adiciona a pergunta ao contêiner do quiz
     quizContainer.appendChild(perguntaElement);

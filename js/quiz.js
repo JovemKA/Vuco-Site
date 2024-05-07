@@ -65,9 +65,9 @@ function exibirQuiz(perguntas) {
       // Altera a seleção da alternativa
       this.querySelector("input").checked = true;
 
-      // Remove as classes de feedback anteriores
-      document.querySelectorAll(".option").forEach(function (opt) {
-        opt.classList.remove("correct", "incorrect");
+      // Remove as classes de feedback anteriores das opções da mesma pergunta
+      document.querySelectorAll('.option[data-pergunta="' + pergunta + '"]').forEach(function (opt) {
+        opt.classList.remove('correct', 'incorrect');
       });
 
       // Verifica se a resposta selecionada está correta

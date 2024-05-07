@@ -62,12 +62,14 @@ button:hover {
 
 /* Estilos para opções de resposta corretas */
 .option.correct {
-  color: green;
+  background-color: green;
+  color: white;
   font-weight: bold;
 }
 
 /* Estilos para opções de resposta incorretas */
 .option.incorrect {
-  color: red;
+  background-color: red;
+  color: white;
   font-weight: bold;
 }

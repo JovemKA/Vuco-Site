@@ -1,0 +1,85 @@
+/* Estilo geral do header */
+header {
+  background-color: #fff;
+  padding: 20px 0;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Container para centralizar o conteúdo */
+.container {
+  max-width: 100%;
+  /* Limita a largura do container */
+  margin: 0 auto;
+  /* Centraliza o container na tela */
+  display: flex;
+  /* Define layout flexbox */
+  justify-content: center;
+  /* Centraliza os itens na horizontal */
+  align-items: center;
+  /* Alinha os itens verticalmente no centro */
+}
+
+/* Logo do Airbnb */
+.logo {
+  display: inline-block;
+}
+
+.logo img {
+  width: 150px;
+  /* Ajusta a largura do logo */
+  height: auto;
+  /* Mantém a proporção da altura */
+}
+
+/* Menu de usuário (sem links) */
+.user-menu {
+  display: inline-block;
+}
+
+.user-menu ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.user-menu li {
+  display: inline-block;
+  margin-right: 10px;
+}
+
+.recife-esquerdo,
+.recife-direito {
+  position: absolute;
+  /* Posiciona as imagens de forma absoluta */
+  top: 50%;
+  /* Posiciona as imagens no meio vertical */
+  transform: translateY(-50%);
+  /* Compensa o deslocamento vertical */
+}
+
+.recife-esquerdo {
+  left: 0;
+  /* Posiciona a imagem à esquerda */
+}
+
+.recife-direito {
+  right: 0;
+  /* Posiciona a imagem à direita */
+}
+
+.recife-esquerdo img,
+.recife-direito img {
+  width: 100px;
+  /* Ajuste a largura das imagens */
+  height: auto;
+  /* Mantém a proporção da altura */
+}
+
+.content{
+    max-width: 1200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 50px;
+}

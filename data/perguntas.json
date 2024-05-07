@@ -1,0 +1,177 @@
+[
+    {
+        "id": 1,
+        "pergunta": "Do que é formado o memorial de Chico Science?",
+        "opcoes": [
+            "O Memorial Chico Science é composto por uma coleção de artefatos, incluindo instrumentos musicais, fotografias históricas, letras de músicas manuscritas e figurinos usados em shows icônicos.",
+            "Os elementos do Memorial Chico Science abrangem desde objetos pessoais do músico, como cadernos de anotações e itens de vestuário, até registros audiovisuais de performances ao vivo e entrevistas.",
+            "No Memorial Chico Science, os visitantes podem explorar uma exposição interativa que destaca a vida e o legado de Chico Science, com recursos multimídia, depoimentos de colaboradores e uma linha do tempo detalhada de sua carreira.",
+            "A coleção do Memorial Chico Science engloba uma variedade de materiais, desde arte urbana inspirada no movimento manguebeat até obras de artistas contemporâneos influenciados pela música e filosofia de Chico Science."
+        ],
+        "resposta_correta": "b"
+    },
+    {
+        "id": 2,
+        "pergunta": "Qual a mensagem que a música Maracatu Atômico passa?",
+        "opcoes": [
+            "A música também aborda a ideia de identidade e pertencimento, como na linha 'todo quadro negro e todo negro negro e todo negro'.",
+            "Foi uma homenagem ao Recife.",
+            "Foi uma demonstração de agradecimento ao povo pernambucano."
+        ],
+        "resposta_correta": "a"
+    },
+    {
+        "id": 3,
+        "pergunta": "O que Chico Science defendia?",
+        "opcoes": [
+            "Buscava denunciar as desigualdades e a pobreza de Pernambuco e ao mesmo tempo promover uma renovação cultural e artística em todo o estado.",
+            "Buscava defender e apoiar um partido político.",
+            "Buscava defender a história do Brasil."
+        ],
+        "resposta_correta": "a"
+    },
+    {
+        "id": 4,
+        "pergunta": "Quem foi o criador do movimento Mangbeat?",
+        "opcoes": [
+            "Solano Trindade",
+            "Reginaldo Rossi",
+            "Chico Science"
+        ],
+        "resposta_correta": "c"
+    },
+    {
+        "id": 5,
+        "pergunta": "Em qual cidade nasceu Chico Science?",
+        "opcoes": [
+            "Recife",
+            "Olinda",
+            "São Lourenço da Mata"
+        ],
+        "resposta_correta": "b"
+    },
+    {
+        "id": 6,
+        "pergunta": "Onde fica a estátua de São Pedro?",
+        "opcoes": [
+            "No pátio de São Pedro",
+            "No pátio do Terço",
+            "Na rua das Palmas"
+        ],
+        "resposta_correta": "a"
+    },
+    {
+        "id": 7,
+        "pergunta": "Qual das entradas é a incorreta para chegar ao pátio de São Pedro?",
+        "opcoes": [
+            "Águas verdes",
+            "Beco do Viado",
+            "Rua do Fogo",
+            "Travessa",
+            "Rua da Praia"
+        ],
+        "resposta_correta": "e"
+    },
+    {
+        "id": 8,
+        "pergunta": "Qual foi o empreendimento de Solano Trindade no Recife?",
+        "opcoes": [
+            "Foi a construção do monumento em homenagem a Chico Science",
+            "Foi o criador do movimento (Terça-Feira Negra)",
+            "Congresso Afro-Brasileiro no Recife"
+        ],
+        "resposta_correta": "c"
+    },
+    {
+        "id": 9,
+        "pergunta": "Qual dessas funções não condiz com Solano Trindade?",
+        "opcoes": [
+            "Poeta",
+            "Cineasta",
+            "Folclorista",
+            "Político"
+        ],
+        "resposta_correta": "d"
+    },
+    {
+        "id": 10,
+        "pergunta": "Qual o animal e o símbolo do movimento Manguebeat?",
+        "opcoes": [
+            "Caranguejo",
+            "Peixe",
+            "Leão"
+        ],
+        "resposta_correta": "a"
+    },
+    {
+        "id": 11,
+        "pergunta": "Quais desses gêneros musicais fazem parte do ritmo de Chico Science?",
+        "opcoes": [
+            "Brega, Maracatu",
+            "Forró, Rap",
+            "Rock, Rap"
+        ],
+        "resposta_correta": "c"
+    },
+    {
+        "id": 12,
+        "pergunta": "Onde acontece o movimento (Terça-Feira Negra)?",
+        "opcoes": [
+            "Acontece no Pátio de São Pedro",
+            "Acontece no Pátio do Terço",
+            "Acontece na Rua do Marroquim"
+        ],
+        "resposta_correta": "a"
+    },
+    {
+        "id": 13,
+        "pergunta": "Você sabe onde acontece o movimento chamado (Tambor Silenciado)?",
+        "opcoes": [
+            "Acontece no Parque São Jorge",
+            "Acontece na Rua das Palmas",
+            "Acontece no Pátio do Terço"
+        ],
+        "resposta_correta": "c  "
+    },
+    {
+        "id": 14,
+        "pergunta": "Qual foi o primeiro centro turístico de Recife?",
+        "opcoes": [
+            "Cais de Santa Rita",
+            "Pátio de São Pedro",
+            "Mercado de São José"
+        ],
+        "resposta_correta": "a"
+    },
+    {
+        "id": 15,
+        "pergunta": "Qual dos nomes citados abaixo era o nome antecedente do Mercado de São José?",
+        "opcoes": [
+            "Ribeira dos Peixes",
+            "Terrenos dos Coqueiros",
+            "Mercado do Comércio"
+        ],
+        "resposta_correta": "a"
+    },
+    {
+        "id": 16,
+        "pergunta": "Qual o nome histórico que denominou a Praça da 17?",
+        "opcoes": [
+            "Revolução Praeira",
+            "Praça do Comércio",
+            "Praça do Diário"
+        ],
+        "resposta_correta": "a"
+    },
+    {
+        "id": 17,
+        "pergunta": "Qual das alternativas marcou a história de Joaquim Nabuco no Recife?",
+        "opcoes": [
+            "Fundação de instituições educacionais",
+            "Liderança em movimento abolicionista",
+            "Introduziu sistema de transporte público",
+            "Construção de monumento em sua homenagem"
+        ],
+        "resposta_correta": "b"
+    }
+]

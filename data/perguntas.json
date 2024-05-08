@@ -3,10 +3,10 @@
         "id": 1,
         "pergunta": "Do que é formado o memorial de Chico Science?",
         "opcoes": [
-            "O Memorial Chico Science é composto por uma coleção de artefatos, incluindo instrumentos musicais, fotografias históricas, letras de músicas manuscritas e figurinos usados em shows icônicos.",
-            "Os elementos do Memorial Chico Science abrangem desde objetos pessoais do músico, como cadernos de anotações e itens de vestuário, até registros audiovisuais de performances ao vivo e entrevistas.",
-            "No Memorial Chico Science, os visitantes podem explorar uma exposição interativa que destaca a vida e o legado de Chico Science, com recursos multimídia, depoimentos de colaboradores e uma linha do tempo detalhada de sua carreira.",
-            "A coleção do Memorial Chico Science engloba uma variedade de materiais, desde arte urbana inspirada no movimento manguebeat até obras de artistas contemporâneos influenciados pela música e filosofia de Chico Science."
+            {"texto": "O Memorial Chico Science é composto por uma coleção de artefatos, incluindo instrumentos musicais, fotografias históricas, letras de músicas manuscritas e figurinos usados em shows icônicos.", "correta": false},
+            {"texto": "Os elementos do Memorial Chico Science abrangem desde objetos pessoais do músico, como cadernos de anotações e itens de vestuário, até registros audiovisuais de performances ao vivo e entrevistas.", "correta": true},
+            {"texto": "No Memorial Chico Science, os visitantes podem explorar uma exposição interativa que destaca a vida e o legado de Chico Science, com recursos multimídia, depoimentos de colaboradores e uma linha do tempo detalhada de sua carreira.", "correta": false},
+            {"texto": "A coleção do Memorial Chico Science engloba uma variedade de materiais, desde arte urbana inspirada no movimento manguebeat até obras de artistas contemporâneos influenciados pela música e filosofia de Chico Science.", "correta": false}
         ],
         "resposta_correta": "b"
     },
@@ -14,9 +14,9 @@
         "id": 2,
         "pergunta": "Qual a mensagem que a música Maracatu Atômico passa?",
         "opcoes": [
-            "A música também aborda a ideia de identidade e pertencimento, como na linha 'todo quadro negro e todo negro negro e todo negro'.",
-            "Foi uma homenagem ao Recife.",
-            "Foi uma demonstração de agradecimento ao povo pernambucano."
+            {"texto": "A música também aborda a ideia de identidade e pertencimento, como na linha 'todo quadro negro e todo negro negro e todo negro'.", "correta": true},
+            {"texto": "Foi uma homenagem ao Recife.", "correta": false},
+            {"texto": "Foi uma demonstração de agradecimento ao povo pernambucano.", "correta": false}
         ],
         "resposta_correta": "a"
     },
@@ -24,9 +24,9 @@
         "id": 3,
         "pergunta": "O que Chico Science defendia?",
         "opcoes": [
-            "Buscava denunciar as desigualdades e a pobreza de Pernambuco e ao mesmo tempo promover uma renovação cultural e artística em todo o estado.",
-            "Buscava defender e apoiar um partido político.",
-            "Buscava defender a história do Brasil."
+            {"texto": "Buscava denunciar as desigualdades e a pobreza de Pernambuco e ao mesmo tempo promover uma renovação cultural e artística em todo o estado.", "correta": true},
+            {"texto": "Buscava defender e apoiar um partido político.", "correta": false},
+            {"texto": "Buscava defender a história do Brasil.", "correta": false}
         ],
         "resposta_correta": "a"
     },
@@ -34,9 +34,9 @@
         "id": 4,
         "pergunta": "Quem foi o criador do movimento Mangbeat?",
         "opcoes": [
-            "Solano Trindade",
-            "Reginaldo Rossi",
-            "Chico Science"
+            {"texto": "Solano Trindade", "correta": false},
+            {"texto": "Reginaldo Rossi", "correta": false},
+            {"texto": "Chico Science", "correta": true}
         ],
         "resposta_correta": "c"
     },
@@ -44,9 +44,9 @@
         "id": 5,
         "pergunta": "Em qual cidade nasceu Chico Science?",
         "opcoes": [
-            "Recife",
-            "Olinda",
-            "São Lourenço da Mata"
+            {"texto": "Recife", "correta": false},
+            {"texto": "Olinda", "correta": true},
+            {"texto": "São Lourenço da Mata", "correta": false}
         ],
         "resposta_correta": "b"
     },
@@ -54,9 +54,9 @@
         "id": 6,
         "pergunta": "Onde fica a estátua de São Pedro?",
         "opcoes": [
-            "No pátio de São Pedro",
-            "No pátio do Terço",
-            "Na rua das Palmas"
+            {"texto": "No pátio de São Pedro", "correta": true},
+            {"texto": "No pátio do Terço", "correta": false},
+            {"texto": "Na rua das Palmas", "correta": false}
         ],
         "resposta_correta": "a"
     },
@@ -64,11 +64,11 @@
         "id": 7,
         "pergunta": "Qual das entradas é a incorreta para chegar ao pátio de São Pedro?",
         "opcoes": [
-            "Águas verdes",
-            "Beco do Viado",
-            "Rua do Fogo",
-            "Travessa",
-            "Rua da Praia"
+            {"texto": "Águas verdes", "correta": false},
+            {"texto": "Beco do Viado", "correta": false},
+            {"texto": "Rua do Fogo", "correta": false},
+            {"texto": "Travessa", "correta": false},
+            {"texto": "Rua da Praia", "correta": true}
         ],
         "resposta_correta": "e"
     },
@@ -76,9 +76,9 @@
         "id": 8,
         "pergunta": "Qual foi o empreendimento de Solano Trindade no Recife?",
         "opcoes": [
-            "Foi a construção do monumento em homenagem a Chico Science",
-            "Foi o criador do movimento (Terça-Feira Negra)",
-            "Congresso Afro-Brasileiro no Recife"
+            {"texto": "Foi a construção do monumento em homenagem a Chico Science", "correta": false},
+            {"texto": "Foi o criador do movimento (Terça-Feira Negra)", "correta": false},
+            {"texto": "Congresso Afro-Brasileiro no Recife", "correta": true}
         ],
         "resposta_correta": "c"
     },
@@ -86,10 +86,10 @@
         "id": 9,
         "pergunta": "Qual dessas funções não condiz com Solano Trindade?",
         "opcoes": [
-            "Poeta",
-            "Cineasta",
-            "Folclorista",
-            "Político"
+            {"texto": "Poeta", "correta": false},
+            {"texto": "Cineasta", "correta": false},
+            {"texto": "Folclorista", "correta": false},
+            {"texto": "Político", "correta": true}
         ],
         "resposta_correta": "d"
     },
@@ -97,9 +97,9 @@
         "id": 10,
         "pergunta": "Qual o animal e o símbolo do movimento Manguebeat?",
         "opcoes": [
-            "Caranguejo",
-            "Peixe",
-            "Leão"
+            {"texto": "Caranguejo", "correta": true},
+            {"texto": "Peixe", "correta": false},
+            {"texto": "Leão", "correta": false}
         ],
         "resposta_correta": "a"
     },
@@ -107,9 +107,9 @@
         "id": 11,
         "pergunta": "Quais desses gêneros musicais fazem parte do ritmo de Chico Science?",
         "opcoes": [
-            "Brega, Maracatu",
-            "Forró, Rap",
-            "Rock, Rap"
+            {"texto": "Brega, Maracatu", "correta": false},
+            {"texto": "Forró, Rap", "correta": false},
+            {"texto": "Rock, Rap", "correta": true}
         ],
         "resposta_correta": "c"
     },
@@ -117,9 +117,9 @@
         "id": 12,
         "pergunta": "Onde acontece o movimento (Terça-Feira Negra)?",
         "opcoes": [
-            "Acontece no Pátio de São Pedro",
-            "Acontece no Pátio do Terço",
-            "Acontece na Rua do Marroquim"
+            {"texto": "Acontece no Pátio de São Pedro", "correta": true},
+            {"texto": "Acontece no Pátio do Terço", "correta": false},
+            {"texto": "Acontece na Rua do Marroquim", "correta": false}
         ],
         "resposta_correta": "a"
     },
@@ -127,9 +127,9 @@
         "id": 13,
         "pergunta": "Você sabe onde acontece o movimento chamado (Tambor Silenciado)?",
         "opcoes": [
-            "Acontece no Parque São Jorge",
-            "Acontece na Rua das Palmas",
-            "Acontece no Pátio do Terço"
+            {"texto": "Acontece no Parque São Jorge", "correta": false},
+            {"texto": "Acontece na Rua das Palmas", "correta": false},
+            {"texto": "Acontece no Pátio do Terço", "correta": true}
         ],
         "resposta_correta": "c"
     },
@@ -137,9 +137,9 @@
         "id": 14,
         "pergunta": "Qual foi o primeiro centro turístico de Recife?",
         "opcoes": [
-            "Cais de Santa Rita",
-            "Pátio de São Pedro",
-            "Mercado de São José"
+            {"texto": "Cais de Santa Rita", "correta": true},
+            {"texto": "Pátio de São Pedro", "correta": false},
+            {"texto": "Mercado de São José", "correta": false}
         ],
         "resposta_correta": "a"
     },
@@ -147,9 +147,9 @@
         "id": 15,
         "pergunta": "Qual dos nomes citados abaixo era o nome antecedente do Mercado de São José?",
         "opcoes": [
-            "Ribeira dos Peixes",
-            "Terrenos dos Coqueiros",
-            "Mercado do Comércio"
+            {"texto": "Ribeira dos Peixes", "correta": true},
+            {"texto": "Terrenos dos Coqueiros", "correta": false},
+            {"texto": "Mercado do Comércio", "correta": false}
         ],
         "resposta_correta": "a"
     },
@@ -157,9 +157,9 @@
         "id": 16,
         "pergunta": "Qual o nome histórico que denominou a Praça da 17?",
         "opcoes": [
-            "Revolução Praeira",
-            "Praça do Comércio",
-            "Praça do Diário"
+            {"texto": "Revolução Praeira", "correta": true},
+            {"texto": "Praça do Comércio", "correta": false},
+            {"texto": "Praça do Diário", "correta": false}
         ],
         "resposta_correta": "a"
     },
@@ -167,10 +167,10 @@
         "id": 17,
         "pergunta": "Qual das alternativas marcou a história de Joaquim Nabuco no Recife?",
         "opcoes": [
-            "Fundação de instituições educacionais",
-            "Liderança em movimento abolicionista",
-            "Introduziu sistema de transporte público",
-            "Construção de monumento em sua homenagem"
+            {"texto": "Fundação de instituições educacionais", "correta": false},
+            {"texto": "Liderança em movimento abolicionista", "correta": true},
+            {"texto": "Introduziu sistema de transporte público", "correta": false},
+            {"texto": "Construção de monumento em sua homenagem", "correta": false}
         ],
         "resposta_correta": "b"
     }

@@ -27,15 +27,15 @@ function exibirQuiz(perguntas) {
       ); // Adiciona um atributo para identificar a opção (a, b, c, ...)
       opcaoItem.setAttribute(
         "data-resposta",
-        pergunta.resposta_correta.toLowerCase()
-      ); // Adiciona um atributo para identificar a resposta correta
+        opcao.correta ? "correta" : "incorreta"
+      ); // Adiciona um atributo para identificar se a resposta é correta
       opcaoItem.innerHTML =
         '<input type="radio" name="q' +
         (index + 1) +
         '" value="' +
         String.fromCharCode(97 + opcaoIndex) + // Define o valor como a letra correspondente (a, b, c, ...)
         '" /> ' +
-        opcao;
+        opcao.texto;
       opcoesList.appendChild(opcaoItem);
     });
 
@@ -57,7 +57,7 @@ function exibirQuiz(perguntas) {
     option.addEventListener("click", function () {
       var pergunta = this.getAttribute("data-pergunta"); // Obtém o número da pergunta
       var opcaoSelecionada = this.getAttribute("data-opcao"); // Obtém o número da opção selecionada
-      var respostaCorreta = this.getAttribute("data-resposta"); // Obtém a resposta correta
+      var resposta = this.getAttribute("data-resposta"); // Obtém se a resposta é correta ou não
 
       // Obtém o elemento de feedback para esta pergunta
       var feedbackDiv = document.getElementById("feedback" + pergunta);
@@ -71,15 +71,17 @@ function exibirQuiz(perguntas) {
       });
 
       // Verifica se a resposta selecionada está correta
-      if (opcaoSelecionada === respostaCorreta) {
+      if (resposta === "correta") {
         feedbackDiv.innerHTML =
           "<span class='correct'>&#x2714; Correto!</span>";
         this.classList.add("correct");
       } else {
+        // Obtém a letra da opção correta
+        var respostaCorreta = this.parentNode.querySelector('[data-resposta="correta"]').innerText;
         feedbackDiv.innerHTML =
-          "<span class='incorrect'>&#x2718; Errado! A resposta correta era: " +
+          "<span class='incorrect'>&#x2718; Errado! A resposta correta era:" +
           respostaCorreta +
-          ") </span>";
+          " </span>";
         this.classList.add("incorrect");
       }
     });
@@ -106,6 +108,7 @@ function selecionarPerguntas(perguntas, quantidade) {
 }
 
 // Carrega o arquivo JSON com as perguntas
+// Neste exemplo, assumimos que o arquivo JSON está na mesma pasta e se chama "perguntas.json"
 fetch("data/perguntas.json")
   .then((response) => response.json())
   .then((data) => {

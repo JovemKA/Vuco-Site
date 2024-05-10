@@ -10,19 +10,24 @@
 
 <body>
   <header>
-    <div class="container">
-      <div class="recife-esquerdo"></div>
-      <div class="logo">
-        <img src="logo.png" alt="Logo" />
-      </div>
-      <div class="recife-direito"></div>
-    </div>
+      <!-- <div class="recife-esquerdo"></div> -->
+      <a class="logo" href="index.html">
+        <img class="logo_img" src="./img/VUCO_LOGO_NO_BG.png" alt="Logo" />
+      </a>
+      <nav class="nav">
+        <a href="#sobre">Sobre o projeto</a>
+        <a href="#grupo">Informações do grupo</a>
+        <a href="#mapa">Mapa</a>
+        <a href="#quiz">Quiz</a>
+      </nav>
   </header>
 
   <main>
-    <div class="container">
-      <div class="content" id="quiz">
-        <h1 class="titulo">Quiz</h1>
+    <div id="sobre">
+      <img class="img_sobre" src="./img/sobre.png" alt="foto de sobre o projeto">
+      
+      <div class="content">
+        <h1 class="titulo">Sobre o Projeto</h1>
         <p>
           Lorem ipsum, dolor sit amet consectetur adipisicing elit. Numquam
           deleniti aliquam quasi ad, sapiente qui odio modi iusto commodi
@@ -34,12 +39,29 @@
           debitis ducimus exercitationem laborum recusandae, consequatur molestias expedita facere maiores reiciendis
           deleniti, impedit minima corporis amet odit illo. Nam, error. Aliquid!
         </p>
-        <a href="./quiz.html">Responder Quiz</a>
-        <br>
       </div>
     </div>
-    <div class="container">
-      <div class="content" id="mapa">
+    <div id="grupo">
+      <div class="content" >
+        <h1 class="titulo">Informações do Grupo</h1>
+        <p>
+          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Numquam
+          deleniti aliquam quasi ad, sapiente qui odio modi iusto commodi
+          inventore totam quo tempore ea omnis culpa illo, sequi distinctio
+          debitis? Lorem ipsum dolor sit amet consectetur adipisicing elit.
+          Amet minima quos vitae odio magnam debitis. Sit vitae earum
+          repellat. Obcaecati labore atque aliquid facere reprehenderit
+          eligendi velit voluptate sit laboriosam?Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia
+          debitis ducimus exercitationem laborum recusandae, consequatur molestias expedita facere maiores reiciendis
+          deleniti, impedit minima corporis amet odit illo. Nam, error. Aliquid!
+        </p>
+      </div>
+      <img class="img_sobre" src="./img/grupo.png" alt="foto de informações do grupo">
+    </div>
+    <div id="mapa">
+      <img class="img_mapa" src="./img/mapa.jpeg" alt="foto do mapa">
+
+      <div class="content" >
         <h1 class="titulo">Mapa</h1>
         <p>
           Lorem ipsum, dolor sit amet consectetur adipisicing elit. Numquam
@@ -55,35 +77,49 @@
       </div>
     </div>
     <div class="container">
-      <div class="content" id="sobre">
-        <h1 class="titulo">Sobre o Projeto</h1>
-        <p>
-          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Numquam
-          deleniti aliquam quasi ad, sapiente qui odio modi iusto commodi
-          inventore totam quo tempore ea omnis culpa illo, sequi distinctio
-          debitis? Lorem ipsum dolor sit amet consectetur adipisicing elit.
-          Amet minima quos vitae odio magnam debitis. Sit vitae earum
-          repellat. Obcaecati labore atque aliquid facere reprehenderit
-          eligendi velit voluptate sit laboriosam?Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia
-          debitis ducimus exercitationem laborum recusandae, consequatur molestias expedita facere maiores reiciendis
-          deleniti, impedit minima corporis amet odit illo. Nam, error. Aliquid!
-        </p>
-      </div>
-    </div>
-    <div class="container">
-      <div class="content" id="grupo">
-        <h1 class="titulo">Informações do Grupo</h1>
+      <div class="content" id="quiz">
+        <h1 class="titulo">Quiz</h1>
         <p>
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure saepe, asperiores voluptate enim tempora eveniet
           nostrum in consequatur. Modi voluptates eos, possimus doloribus a accusamus illum odio. Magnam, illo
           modi?Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut expedita sit vel deserunt ad? Cumque delectus
           distinctio quos incidunt illo voluptate aliquid impedit. Veritatis fuga magni voluptatem corrupti quasi fugit.
         </p>
+        <a href="./quiz.html">Responder Quiz</a>
       </div>
     </div>
   </main>
 
-  <footer></footer>
+  <footer>
+    <div class="listFooter">
+        <p class="listFooterTitle">Sociais</p>
+        <div class="footerSocial">
+          <a href="https://www.instagram.com/casacriatura" target="_blank">
+            <img class="footerIcon" src="./img/instagram-svgrepo-com.svg" alt="icon de instagram">
+          </a>
+          <a href="https://www.linkedin.com/company/casacriatura/" target="_blank">
+            <img class="footerIcon" src="./img/linkedin-svgrepo-com.svg" alt="icon de linkedin">
+          </a>
+          <a href="https://twitter.com/casacriatura" target="_blank">
+            <img class="footerIcon" src="/img/twitter-svgrepo-com.svg" alt="icon do X">
+          </a>
+          
+          <a href="https://casacriatura.com/" target="_blank">
+            <img class="footerIcon" src="/img/site-svgrepo-com.svg" alt="Site da Casa Criatura">
+          </a>
+        </div>
+    </div>
+
+    <img class='logo' src="./img/VUCO_LOGO_NO_BG.png" alt="Logo Vuco">
+
+    <div class="listFooter">
+        <p class="listFooterTitle">Onde nos encontrar</p>
+        <p class="footerLink">Endereço: R. de São Bento, 344 - Carmo, Olinda - PE, 53020-060</p>
+        <p class="footerLink">Telefone: (81) 98526-9632</p>
+        <p class="footerLink  ">Made by class Catolica 💗</p>
+        
+    </div>
+</footer>
 </body>
 
 </html>

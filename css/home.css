@@ -1,8 +1,86 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  font-family: 'Montserrat', sans-serif;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
 /* Estilo geral do header */
 header {
-  background-color: #fff;
-  padding: 20px 0;
+  background: linear-gradient(to right,#1b8cbc, #69d6de);
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2rem;
+  
+}
+
+nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+
+nav a {
+  color: azure;
+  text-decoration: none;
+  position: relative;
+}
+
+.logo_img {
+  width: 100px;
+  cursor: pointer;
+}
+
+/* SECTION ID */
+#sobre {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1.2rem;
+  padding: 3rem;
+}
+
+.img_sobre {
+  width: 500px;
+}
+
+.content {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  width: 50%;
+
+}
+
+/* SECTION INFO DO GRUPO */
+
+#grupo {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1.2rem;
+  padding: 3rem;
+}
+
+/* SECTION DO MAPA */
+#mapa {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1.2rem;
+  padding: 3rem;
+}
+
+
+.img_mapa {
+  width: 400px;
 }
 
 /* Container para centralizar o conteúdo */
@@ -19,7 +97,7 @@ header {
   /* Alinha os itens verticalmente no centro */
 }
 
-/* Logo do Airbnb */
+/* Logo do Airbnb
 .logo {
   display: inline-block;
 }
@@ -27,9 +105,9 @@ header {
 .logo img {
   width: 150px;
   /* Ajusta a largura do logo */
-  height: auto;
+  /* height: auto; */
   /* Mantém a proporção da altura */
-}
+/* } */
 
 /* Menu de usuário (sem links) */
 .user-menu {
@@ -82,4 +160,61 @@ header {
     align-items: center;
     flex-direction: column;
     margin-top: 50px;
+}
+
+/* SECTION FOOTER */
+/* SECTION FOOTER */
+footer {
+  border: 1px solid black;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  gap: 3rem;
+  padding: 2rem 2rem;
+}
+
+
+.listFooterTitle{
+  font-weight: 350;
+  font-size: 1.3rem;
+  color: darkgrey;
+}
+
+.footerLink {
+  font-size: 0.8rem;
+  font-weight: 150;
+  text-decoration: none;
+  color: black;
+
+}
+
+.listFooter {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.8rem;
+  height: 180px;
+  width: 415px;
+}
+
+.socialLinks {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.footerIcon {
+  width: 20px;
+}
+
+.footerSocial {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+
+.logo {
+  width: 250px;
 }

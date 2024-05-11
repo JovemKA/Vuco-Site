@@ -72,6 +72,10 @@ nav a {
   padding: 3rem;
 }
 
+.img_grupo {
+  width: 500px;
+}
+
 /* SECTION DO MAPA */
 #mapa {
   display: flex;
@@ -228,7 +232,30 @@ footer {
     flex-direction: column;
   }
 
-  #sobre:nth-child(2) {
-    order: 1;
+  #grupo{
+    flex-direction: column-reverse;
+  }
+}
+
+@media (max-width: 686px) {
+  footer {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+
+  footer:nth-child(2) {
+    order:1
+  }
+
+  .listFooter {
+    height: auto;
+  }
+}
+
+
+@media (max-width: 500px) {
+  .img_grupo, .img_sobre {
+    width: 400px;
   }
 }

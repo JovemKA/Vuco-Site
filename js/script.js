@@ -42,3 +42,11 @@ function verificarRespostas() {
     respostasDiv.style.display = "block";
   }
   
+function navBar() {
+  let nav = document.querySelector('.nav')
+  if (nav.classList.contains('close')) {
+    nav.classList.remove('close')
+  } else {
+    nav.classList.add('close')
+  }
+}

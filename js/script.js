@@ -44,9 +44,9 @@ function verificarRespostas() {
   
 function navBar() {
   let nav = document.querySelector('.nav')
-  if (nav.classList.contains('close')) {
-    nav.classList.remove('close')
+  if (nav.classList.contains('open')) {
+    nav.classList.remove('open')
   } else {
-    nav.classList.add('close')
+    nav.classList.add('open')
   }
 }

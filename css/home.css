@@ -8,6 +8,16 @@
 html {
   scroll-behavior: smooth;
 }
+
+.content {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  width: 50%;
+  gap: 1.5rem;
+
+}
 /* Estilo geral do header */
 header {
   background: linear-gradient(to right,#1b8cbc, #69d6de);
@@ -79,14 +89,7 @@ nav a:hover::after {
   margin: 0px 0.7rem; 
 }
 
-.content {
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  align-items: center;
-  width: 50%;
 
-}
 
 /* SECTION INFO DO GRUPO */
 
@@ -191,7 +194,6 @@ nav a:hover::after {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 2.5rem;
   margin-bottom: 3rem;
   /* Alinha os itens verticalmente no centro */
 }
@@ -261,7 +263,8 @@ footer {
   width: 250px;
 }
 
-/* BUTTON QUIZ */
+/* BUTTON QUIZ */ 
+
 button {
   display: flex;
   align-items: center;

@@ -8,23 +8,30 @@
   </head>
   <body>
     <header>
-      <div class="container">
-        <div class="recife-esquerdo"></div>
-        <div class="logo">
-          <img src="logo.png" alt="Logo" />
-        </div>
-        <div class="recife-direito"></div>
-      </div>
+      <!-- <div class="recife-esquerdo"></div> -->
+      <a class="logo" href="index.html">
+        <img class="logo_img" src="./img/VUCO_LOGO_NO_BG.png" alt="Logo" />
+      </a>
+      <nav class="nav">
+        <a href="#sobre">Sobre o projeto</a>
+        <a href="#grupo">Informações do grupo</a>
+        <a href="#mapa">Mapa</a>
+        <a href="#quiz">Quiz</a>
+      </nav>
+      <img onclick="navBar()" class="img_menu" src="./img/menu-1-svgrepo-com (1).svg" alt="foto do menu">
     </header>
-    <h1>Quiz sobre a cultura e a história de Recife</h1>
 
-    <form id="quiz-container"></form>
-
-    <!-- Botões de navegação -->
-    <div class="navigation-buttons">
-      <button id="retroceder-btn">Retroceder</button>
-      <button id="avancar-btn">Avançar</button>
-    </div>
+    <main>
+      <h1>Quiz sobre a cultura e a história de Recife</h1>
+  
+      <form id="quiz-container"></form>
+  
+      <!-- Botões de navegação -->
+      <div class="navigation-buttons">
+        <button id="retroceder-btn">Retroceder</button>
+        <button id="avancar-btn">Avançar</button>
+      </div>
+    </main>
 
     <script src="./js/quiz.js"></script>
   </body>

@@ -231,3 +231,12 @@ fetch("data/perguntas.json")
     exibirQuiz();
   })
   .catch((error) => console.error("Erro ao carregar as perguntas:", error));
+
+  function navBar() {
+    let nav = document.querySelector('.nav')
+    if (nav.classList.contains('open')) {
+      nav.classList.remove('open')
+    } else {
+      nav.classList.add('open')
+    }
+  }

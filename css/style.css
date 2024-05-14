@@ -29,44 +29,10 @@ main{
   margin: 0;
   padding: 45px;
 }
-nav {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 1rem;
-}
-
-nav a {
-  color: azure;
-  text-decoration: none;
-  position: relative;
-  font-size: 1rem;
-  font-weight: bold;
-}
-
-nav a::after {
-  content: '';
-  position: absolute;
-  bottom: -5px;
-  left: 0;
-  width: 0;
-  height: 2px;
-  transition: 0.3s;
-  background-color: azure;
-}
-
-nav a:hover::after {
-  width: 100%;
-}
-
 .logo_img {
   width: 150px;
   cursor: pointer;
   margin-top: 1rem;
-}
-
-.img_menu {
-  display: none;
 }
 
 

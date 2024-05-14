@@ -265,102 +265,97 @@ footer {
 
 /* BUTTON QUIZ */ 
 
-button {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 50px;
+a {
+  text-decoration: none;
+}
+.animated-button {
   position: relative;
-  padding: 0 20px;
-  font-size: 18px;
-  text-transform: uppercase;
-  border: 0;
-  box-shadow: hsl(210deg 87% 36%) 0px 7px 0px 0px;
-  background-color: hsl(210deg 100% 44%);
-  border-radius: 12px;
-  overflow: hidden;
-  transition: 31ms cubic-bezier(.5, .7, .4, 1);
-  cursor: pointer;
- }
- 
- button:before {
-  content: attr(alt);
   display: flex;
   align-items: center;
-  justify-content: center;
+  gap: 4px;
+  padding: 16px 36px;
+  border: 4px solid;
+  border-color: transparent;
+  font-size: 16px;
+  background-color: inherit;
+  border-radius: 100px;
+  font-weight: 600;
+  color: #049ce4 ;
+  box-shadow: 0 0 0 2px #049ce4;
+  cursor: pointer;
+  overflow: hidden;
+  transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.animated-button svg {
   position: absolute;
-  inset: 0;
-  font-size: 15px;
-  font-weight: bold;
-  color: white;
-  letter-spacing: 4px;
-  opacity: 1;
- }
- 
- button:active {
-  box-shadow: none;
-  transform: translateY(7px);
-  transition: 35ms cubic-bezier(.5, .7, .4, 1);
- }
- 
- button:hover:before {
-  transition: all .0s;
-  transform: translateY(100%);
+  width: 24px;
+  fill: #049ce4;
+  z-index: 9;
+  transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.animated-button .arr-1 {
+  right: 16px;
+}
+
+.animated-button .arr-2 {
+  left: -25%;
+}
+
+.animated-button .circle {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 20px;
+  height: 20px;
+  background-color: #049ce4;
+  border-radius: 50%;
   opacity: 0;
- }
- 
- button i {
+  transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.animated-button .text {
+  position: relative;
+  z-index: 1;
+  transform: translateX(-12px);
+  transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.animated-button:hover {
+  box-shadow: 0 0 0 12px transparent;
   color: white;
-  font-size: 15px;
-  font-weight: bold;
-  letter-spacing: 4px;
-  font-style: normal;
-  transition: all 2s ease;
-  transform: translateY(-20px);
-  opacity: 0;
- }
- 
- button:hover i {
-  transition: all .2s ease;
-  transform: translateY(0px);
+  border-radius: 12px;
+}
+
+.animated-button:hover .arr-1 {
+  right: -25%;
+}
+
+.animated-button:hover .arr-2 {
+  left: 16px;
+}
+
+.animated-button:hover .text {
+  transform: translateX(12px);
+}
+
+.animated-button:hover svg {
+  fill: white;
+}
+
+.animated-button:active {
+  scale: 0.95;
+  box-shadow: 0 0 0 4px #049ce4;
+}
+
+.animated-button:hover .circle {
+  width: 220px;
+  height: 220px;
   opacity: 1;
- }
- 
- button:hover i:nth-child(1) {
-  transition-delay: 0.045s;
- }
- 
- button:hover i:nth-child(2) {
-  transition-delay: calc(0.045s * 3);
- }
- 
- button:hover i:nth-child(3) {
-  transition-delay: calc(0.045s * 4);
- }
- 
- /* button:hover i:nth-child(4) {
-  transition-delay: calc(0.045s * 5);
- }
- 
- button:hover i:nth-child(6) {
-  transition-delay: calc(0.045s * 6);
- }
- 
- button:hover i:nth-child(7) {
-  transition-delay: calc(0.045s * 7);
- }
- 
- button:hover i:nth-child(8) {
-  transition-delay: calc(0.045s * 8);
- }
- 
- button:hover i:nth-child(9) {
-  transition-delay: calc(0.045s * 9);
- }
- 
- button:hover i:nth-child(10) {
-  transition-delay: calc(0.045s * 10);
- } */
+}
+
 
 @media (max-width: 915px) {
   #sobre , #grupo, #mapa {

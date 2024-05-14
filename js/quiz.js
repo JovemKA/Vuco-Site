@@ -220,7 +220,7 @@ fetch("data/perguntas.json")
   .then((response) => response.json())
   .then((data) => {
     // Seleciona aleatoriamente as 15 perguntas
-    perguntasSelecionadas = selecionarPerguntas(data, 15);
+    perguntasSelecionadas = selecionarPerguntas(data, 20);
     totalPaginas = Math.ceil(perguntasSelecionadas.length / 5); 
 
     // Exibe o quiz com as perguntas selecionadas

@@ -173,5 +173,36 @@
             {"texto": "Construção de monumento em sua homenagem", "correta": false}
         ],
         "resposta_correta": "b"
+    },
+    {
+        "id": 18,
+        "pergunta": "Quais são os elementos que compõem a exposição interativa no Memorial Chico Science?",
+        "opcoes": [
+            {"texto": "Instrumentos musicais, fotografias históricas, letras de músicas manuscritas e figurinos usados em shows icônicos", "correta": false},
+            {"texto": "Objetos pessoais do músico, como cadernos de anotações e itens de vestuário, registros audiovisuais de performances ao vivo e entrevistas", "correta": false},
+            {"texto": "Recursos multimídia, depoimentos de colaboradores e uma linha do tempo detalhada de sua carreira", "correta": false},
+            {"texto": "Todos os elementos citados", "correta": true}
+        ],
+        "resposta_correta": "d"
+    },
+    {
+        "id": 19,
+        "pergunta": "Qual é o papel do Parque São Jorge na preservação da cultura e das tradições populares do Recife?",
+        "opcoes": [
+            {"texto": "O Parque São Jorge é um espaço de preservação da cultura popular, com atividades que incluem oficinas de artesanato, apresentações de grupos folclóricos e exposições de arte popular.", "correta": true},
+            {"texto": "O Parque São Jorge é um centro de referência para a pesquisa e documentação de manifestações culturais tradicionais, com um acervo de objetos, fotografias e documentos históricos.", "correta": false},
+            {"texto": "O Parque São Jorge é um local de encontro para artistas e intelectuais, com uma programação cultural diversificada que inclui shows, palestras e exposições de arte contemporânea.", "correta": false}
+        ],
+        "resposta_correta": "a"
+    },
+    {
+        "id": 20,
+        "pergunta": "Qual é a importância do Parque São Jorge para a comunidade do Recife?",
+        "opcoes": [
+            {"texto": "O Parque São Jorge é um espaço de convivência e lazer para os moradores da região, com áreas verdes, playgrounds e espaços para prática de esportes.", "correta": false},
+            {"texto": "O Parque São Jorge é um local de referência para a preservação da memória e das tradições populares do Recife, com atividades que promovem a valorização da cultura local.", "correta": true},
+            {"texto": "O Parque São Jorge é um centro de formação artística e cultural, com cursos, oficinas e eventos que estimulam a criatividade e a expressão artística dos participantes.", "correta": false}
+        ],
+        "resposta_correta": "b"
     }
 ]

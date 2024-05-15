@@ -1,18 +1,33 @@
 [
     {
-        "id": 1,
-        "pergunta": "Do que é formado o memorial de Chico Science?",
-        "opcoes": [
-            {"texto": "O Memorial Chico Science é composto por uma coleção de artefatos, incluindo instrumentos musicais, fotografias históricas, letras de músicas manuscritas e figurinos usados em shows icônicos.", "correta": false},
-            {"texto": "Os elementos do Memorial Chico Science abrangem desde objetos pessoais do músico, como cadernos de anotações e itens de vestuário, até registros audiovisuais de performances ao vivo e entrevistas.", "correta": true},
-            {"texto": "No Memorial Chico Science, os visitantes podem explorar uma exposição interativa que destaca a vida e o legado de Chico Science, com recursos multimídia, depoimentos de colaboradores e uma linha do tempo detalhada de sua carreira.", "correta": false},
-            {"texto": "A coleção do Memorial Chico Science engloba uma variedade de materiais, desde arte urbana inspirada no movimento manguebeat até obras de artistas contemporâneos influenciados pela música e filosofia de Chico Science.", "correta": false}
-        ],
-        "resposta_correta": "b"
+  "id": 1,
+  "pergunta": "Do que é formado o memorial de Chico Science?",
+  "imagem": "url_da_imagem_aqui",
+  "opcoes": [
+    {
+      "texto": "O Memorial Chico Science é composto por uma coleção de artefatos, incluindo instrumentos musicais, fotografias históricas, letras de músicas manuscritas e figurinos usados em shows icônicos.",
+      "correta": false
     },
+    {
+      "texto": "Os elementos do Memorial Chico Science abrangem desde objetos pessoais do músico, como cadernos de anotações e itens de vestuário, até registros audiovisuais de performances ao vivo e entrevistas.",
+      "correta": true
+    },
+    {
+      "texto": "No Memorial Chico Science, os visitantes podem explorar uma exposição interativa que destaca a vida e o legado de Chico Science, com recursos multimídia, depoimentos de colaboradores e uma linha do tempo detalhada de sua carreira.",
+      "correta": false
+    },
+    {
+      "texto": "A coleção do Memorial Chico Science engloba uma variedade de materiais, desde arte urbana inspirada no movimento manguebeat até obras de artistas contemporâneos influenciados pela música e filosofia de Chico Science.",
+      "correta": false
+    }
+  ],
+  "resposta_correta": "b"
+}
+,
     {
         "id": 2,
         "pergunta": "Qual a mensagem que a música Maracatu Atômico passa?",
+        "imagem": "url_da_imagem_aqui",
         "opcoes": [
             {"texto": "A música também aborda a ideia de identidade e pertencimento, como na linha 'todo quadro negro e todo negro negro e todo negro'.", "correta": true},
             {"texto": "Foi uma homenagem ao Recife.", "correta": false},
@@ -23,6 +38,7 @@
     {
         "id": 3,
         "pergunta": "O que Chico Science defendia?",
+        "imagem": "url_da_imagem_aqui",
         "opcoes": [
             {"texto": "Buscava denunciar as desigualdades e a pobreza de Pernambuco e ao mesmo tempo promover uma renovação cultural e artística em todo o estado.", "correta": true},
             {"texto": "Buscava defender e apoiar um partido político.", "correta": false},
@@ -33,6 +49,7 @@
     {
         "id": 4,
         "pergunta": "Quem foi o criador do movimento Mangbeat?",
+        "imagem": "url_da_imagem_aqui",
         "opcoes": [
             {"texto": "Solano Trindade", "correta": false},
             {"texto": "Reginaldo Rossi", "correta": false},
@@ -43,6 +60,7 @@
     {
         "id": 5,
         "pergunta": "Em qual cidade nasceu Chico Science?",
+        "imagem": "url_da_imagem_aqui",
         "opcoes": [
             {"texto": "Recife", "correta": false},
             {"texto": "Olinda", "correta": true},
@@ -53,6 +71,7 @@
     {
         "id": 6,
         "pergunta": "Onde fica a estátua de São Pedro?",
+        "imagem": "url_da_imagem_aqui",
         "opcoes": [
             {"texto": "No pátio de São Pedro", "correta": true},
             {"texto": "No pátio do Terço", "correta": false},
@@ -63,6 +82,7 @@
     {
         "id": 7,
         "pergunta": "Qual das entradas é a incorreta para chegar ao pátio de São Pedro?",
+        "imagem": "url_da_imagem_aqui",
         "opcoes": [
             {"texto": "Águas verdes", "correta": false},
             {"texto": "Beco do Viado", "correta": false},
@@ -75,6 +95,7 @@
     {
         "id": 8,
         "pergunta": "Qual foi o empreendimento de Solano Trindade no Recife?",
+        "imagem": "url_da_imagem_aqui",
         "opcoes": [
             {"texto": "Foi a construção do monumento em homenagem a Chico Science", "correta": false},
             {"texto": "Foi o criador do movimento (Terça-Feira Negra)", "correta": false},
@@ -85,6 +106,7 @@
     {
         "id": 9,
         "pergunta": "Qual dessas funções não condiz com Solano Trindade?",
+        "imagem": "url_da_imagem_aqui",
         "opcoes": [
             {"texto": "Poeta", "correta": false},
             {"texto": "Cineasta", "correta": false},
@@ -96,6 +118,7 @@
     {
         "id": 10,
         "pergunta": "Qual o animal e o símbolo do movimento Manguebeat?",
+        "imagem": "url_da_imagem_aqui",
         "opcoes": [
             {"texto": "Caranguejo", "correta": true},
             {"texto": "Peixe", "correta": false},
@@ -106,6 +129,7 @@
     {
         "id": 11,
         "pergunta": "Quais desses gêneros musicais fazem parte do ritmo de Chico Science?",
+        "imagem": "url_da_imagem_aqui",
         "opcoes": [
             {"texto": "Brega, Maracatu", "correta": false},
             {"texto": "Forró, Rap", "correta": false},
@@ -116,6 +140,7 @@
     {
         "id": 12,
         "pergunta": "Onde acontece o movimento (Terça-Feira Negra)?",
+        "imagem": "url_da_imagem_aqui",
         "opcoes": [
             {"texto": "Acontece no Pátio de São Pedro", "correta": true},
             {"texto": "Acontece no Pátio do Terço", "correta": false},
@@ -126,6 +151,7 @@
     {
         "id": 13,
         "pergunta": "Você sabe onde acontece o movimento chamado (Tambor Silenciado)?",
+        "imagem": "url_da_imagem_aqui",
         "opcoes": [
             {"texto": "Acontece no Parque São Jorge", "correta": false},
             {"texto": "Acontece na Rua das Palmas", "correta": false},
@@ -136,6 +162,7 @@
     {
         "id": 14,
         "pergunta": "Qual foi o primeiro centro turístico de Recife?",
+        "imagem": "url_da_imagem_aqui",
         "opcoes": [
             {"texto": "Cais de Santa Rita", "correta": true},
             {"texto": "Pátio de São Pedro", "correta": false},
@@ -146,6 +173,7 @@
     {
         "id": 15,
         "pergunta": "Qual dos nomes citados abaixo era o nome antecedente do Mercado de São José?",
+        "imagem": "url_da_imagem_aqui",
         "opcoes": [
             {"texto": "Ribeira dos Peixes", "correta": true},
             {"texto": "Terrenos dos Coqueiros", "correta": false},
@@ -156,6 +184,7 @@
     {
         "id": 16,
         "pergunta": "Qual o nome histórico que denominou a Praça da 17?",
+        "imagem": "url_da_imagem_aqui",
         "opcoes": [
             {"texto": "Revolução Praeira", "correta": true},
             {"texto": "Praça do Comércio", "correta": false},
@@ -166,6 +195,7 @@
     {
         "id": 17,
         "pergunta": "Qual das alternativas marcou a história de Joaquim Nabuco no Recife?",
+        "imagem": "url_da_imagem_aqui",
         "opcoes": [
             {"texto": "Fundação de instituições educacionais", "correta": false},
             {"texto": "Liderança em movimento abolicionista", "correta": true},
@@ -177,6 +207,7 @@
     {
         "id": 18,
         "pergunta": "Quais são os elementos que compõem a exposição interativa no Memorial Chico Science?",
+        "imagem": "url_da_imagem_aqui",
         "opcoes": [
             {"texto": "Instrumentos musicais, fotografias históricas, letras de músicas manuscritas e figurinos usados em shows icônicos", "correta": false},
             {"texto": "Objetos pessoais do músico, como cadernos de anotações e itens de vestuário, registros audiovisuais de performances ao vivo e entrevistas", "correta": false},
@@ -188,6 +219,7 @@
     {
         "id": 19,
         "pergunta": "Qual é o papel do Parque São Jorge na preservação da cultura e das tradições populares do Recife?",
+        "imagem": "url_da_imagem_aqui",
         "opcoes": [
             {"texto": "O Parque São Jorge é um espaço de preservação da cultura popular, com atividades que incluem oficinas de artesanato, apresentações de grupos folclóricos e exposições de arte popular.", "correta": true},
             {"texto": "O Parque São Jorge é um centro de referência para a pesquisa e documentação de manifestações culturais tradicionais, com um acervo de objetos, fotografias e documentos históricos.", "correta": false},
@@ -198,6 +230,7 @@
     {
         "id": 20,
         "pergunta": "Qual é a importância do Parque São Jorge para a comunidade do Recife?",
+        "imagem": "url_da_imagem_aqui",
         "opcoes": [
             {"texto": "O Parque São Jorge é um espaço de convivência e lazer para os moradores da região, com áreas verdes, playgrounds e espaços para prática de esportes.", "correta": false},
             {"texto": "O Parque São Jorge é um local de referência para a preservação da memória e das tradições populares do Recife, com atividades que promovem a valorização da cultura local.", "correta": true},

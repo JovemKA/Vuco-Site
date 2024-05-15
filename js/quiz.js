@@ -33,8 +33,17 @@ function exibirQuiz() {
 
     var respostaSelecionada = respostasQuiz[perguntaNumero]?.opcaoSelecionada;
 
+    // Adiciona a pergunta ao elemento
     perguntaElement.innerHTML =
       "<h3>" + perguntaNumero + ". " + pergunta.pergunta + "</h3>";
+
+    // Adiciona a imagem da pergunta, se existir
+    if (pergunta.imagem) {
+      var imagemElement = document.createElement("img");
+      imagemElement.src = pergunta.imagem;
+      imagemElement.alt = "Imagem da pergunta " + perguntaNumero;
+      perguntaElement.appendChild(imagemElement);
+    }
 
     // Cria uma lista de opções de resposta
     var opcoesList = document.createElement("ul");
@@ -213,7 +222,6 @@ function exibirFeedback(pergunta, opcaoSelecionada, resposta) {
 }
 
 // Carrega o arquivo JSON com as perguntas
-// Neste exemplo, assumimos que o arquivo JSON está na mesma pasta e se chama "perguntas.json"
 fetch("data/perguntas.json")
   .then((response) => response.json())
   .then((data) => {
@@ -237,6 +245,7 @@ function navBar() {
   }
 }
 
-// Adiciona botões de navegação no HTML e adiciona os event listeners correspondentes
 document.getElementById("avancar-btn").addEventListener("click", avancarPagina);
-document.getElementById("retroceder-btn").addEventListener("click", retrocederPagina);
+document
+  .getElementById("retroceder-btn")
+  .addEventListener("click", retrocederPagina);

@@ -1,4 +1,4 @@
-// Variável para controlar se as perguntas foram embaralhadas
+// Variável para controlar a página atual e outras variáveis globais
 var paginaAtual = 1;
 var totalPaginas = 0;
 var perguntasSelecionadas = [];
@@ -13,9 +13,6 @@ function embaralharPerguntas() {
 
 // Função para exibir o quiz na interface do usuário
 function exibirQuiz() {
-  // Recupera as respostas previamente selecionadas pelo usuário, se existirem
-  var respostasSalvas = JSON.parse(localStorage.getItem(respostasQuiz)) || {};
-
   var quizContainer = document.getElementById("quiz-container");
 
   // Limpa o conteúdo do contêiner do quiz antes de exibir as novas perguntas
@@ -34,12 +31,7 @@ function exibirQuiz() {
     perguntaElement.classList.add("question");
     perguntaElement.setAttribute("data-pergunta", perguntaNumero);
 
-    var respostaSelecionada = respostasSalvas[perguntaNumero];
-
-    // Se uma resposta foi salva previamente, seleciona-a novamente
-    if (respostaSelecionada) {
-      perguntaElement.setAttribute("data-resposta", respostaSelecionada);
-    }
+    var respostaSelecionada = respostasQuiz[perguntaNumero]?.opcaoSelecionada;
 
     perguntaElement.innerHTML =
       "<h3>" + perguntaNumero + ". " + pergunta.pergunta + "</h3>";
@@ -52,25 +44,17 @@ function exibirQuiz() {
     pergunta.opcoes.forEach(function (opcao, opcaoIndex) {
       var opcaoItem = document.createElement("li");
       opcaoItem.classList.add("option");
-      opcaoItem.setAttribute("data-pergunta", perguntaNumero); // Adiciona um atributo para identificar a pergunta
-      opcaoItem.setAttribute(
-        "data-opcao",
-        String.fromCharCode(97 + opcaoIndex)
-      ); // Adiciona um atributo para identificar a opção (a, b, c, ...)
-      opcaoItem.setAttribute(
-        "data-resposta",
-        opcao.correta ? "correta" : "incorreta"
-      ); // Adiciona um atributo para identificar se a resposta é correta
+      opcaoItem.setAttribute("data-pergunta", perguntaNumero);
+      opcaoItem.setAttribute("data-opcao", String.fromCharCode(97 + opcaoIndex));
+      opcaoItem.setAttribute("data-resposta", opcao.correta ? "correta" : "incorreta");
       opcaoItem.innerHTML =
         '<input type="radio" name="q' +
         perguntaNumero +
         '" value="' +
         String.fromCharCode(97 + opcaoIndex) +
         '" ' +
-        (respostaSelecionada === String.fromCharCode(97 + opcaoIndex)
-          ? 'checked="checked"'
-          : "") +
-        " /> " + // Se essa opção foi selecionada anteriormente, marca o radio
+        (respostaSelecionada === String.fromCharCode(97 + opcaoIndex) ? 'checked="checked"' : "") +
+        " /> " +
         opcao.texto;
       opcoesList.appendChild(opcaoItem);
     });
@@ -91,11 +75,17 @@ function exibirQuiz() {
   // Adiciona um evento de clique para cada opção de resposta
   document.querySelectorAll(".option").forEach(function (option) {
     option.addEventListener("click", function () {
-      var pergunta = this.getAttribute("data-pergunta"); // Obtém o número da pergunta
-      var opcaoSelecionada = this.getAttribute("data-opcao"); // Obtém o número da opção selecionada
-      var resposta = this.getAttribute("data-resposta"); // Obtém se a resposta é correta ou não
+      var pergunta = this.getAttribute("data-pergunta");
+      var opcaoSelecionada = this.getAttribute("data-opcao");
+      var resposta = this.getAttribute("data-resposta");
 
       exibirFeedback(pergunta, opcaoSelecionada, resposta);
+
+      // Armazena a resposta no objeto respostasQuiz
+      respostasQuiz[pergunta] = {
+        opcaoSelecionada: opcaoSelecionada,
+        resposta: resposta
+      };
     });
   });
 }
@@ -113,17 +103,16 @@ document.getElementById("quiz-container").appendChild(limparBtn);
 
 // Função para avançar para a próxima página
 function avancarPagina() {
-  // Verifica se todas as perguntas foram respondidas antes de avançar
-  // var todasRespondidas = verificarTodasRespondidas();
+  // Verifica se todas as perguntas da página atual foram respondidas antes de avançar
+  var todasRespondidas = verificarTodasRespondidas();
 
-  if (paginaAtual < totalPaginas /* && todasRespondidas*/) {
+  if (paginaAtual < totalPaginas && todasRespondidas) {
     paginaAtual++;
     exibirQuiz();
-    window.scrollTo(0, 0);
-  } 
-  // else if (!todasRespondidas) {
-  //   alert("Por favor, responda a todas as perguntas antes de avançar.");
-  // }
+    window.scrollTo(0, 0); // Rolagem da página para o topo
+  } else if (!todasRespondidas) {
+    alert("Por favor, responda a todas as perguntas antes de avançar.");
+  }
 }
 
 // Função para retroceder para a página anterior
@@ -135,28 +124,21 @@ function retrocederPagina() {
   }
 }
 
-// Função para salvar as respostas
-function salvarRespostas() {
-  document.querySelectorAll(".option").forEach(function (option) {
-    option.addEventListener("click", function () {
-      var pergunta = this.getAttribute("data-pergunta"); // Obtém o número da pergunta
-      var opcaoSelecionada = this.getAttribute("data-opcao"); // Obtém o número da opção selecionada
-      var resposta = this.getAttribute("data-resposta"); // Obtém se a resposta é correta ou não
+// Função para verificar se todas as perguntas da página atual foram respondidas
+function verificarTodasRespondidas() {
+  var todasRespondidas = true;
+  var indiceInicial = (paginaAtual - 1) * 5;
+  var indiceFinal = Math.min(indiceInicial + 5, perguntasSelecionadas.length);
 
-      // Armazena a resposta no objeto respostasQuiz
-      respostasQuiz[pergunta] = {
-        opcaoSelecionada: opcaoSelecionada,
-        resposta: resposta
-      };
-    });
-  });
+  for (var i = indiceInicial; i < indiceFinal; i++) {
+    var perguntaNumero = i + 1;
+    if (!respostasQuiz[perguntaNumero]) {
+      todasRespondidas = false;
+      break;
+    }
+  }
+  return todasRespondidas;
 }
-
-// Adicione botões de navegação no HTML e adicione os event listeners correspondentes
-document.getElementById("avancar-btn").addEventListener("click", avancarPagina);
-document
-  .getElementById("retroceder-btn")
-  .addEventListener("click", retrocederPagina);
 
 // Função para embaralhar um array
 function shuffleArray(array) {
@@ -225,19 +207,6 @@ function exibirFeedback(pergunta, opcaoSelecionada, resposta) {
   }
 }
 
-// // Função para verificar se todas as perguntas foram respondidas
-// function verificarTodasRespondidas() {
-//   var totalPerguntas = perguntasSelecionadas.length;
-//   var todasRespondidas = true;
-//   for (var i = 1; i <= totalPerguntas; i++) {
-//     if (!respostasQuiz[i]) {
-//       todasRespondidas = false;
-//       break;
-//     }
-//   }
-//   return todasRespondidas;
-// }
-
 // Carrega o arquivo JSON com as perguntas
 // Neste exemplo, assumimos que o arquivo JSON está na mesma pasta e se chama "perguntas.json"
 fetch("data/perguntas.json")
@@ -262,3 +231,7 @@ function navBar() {
     nav.classList.add("open");
   }
 }
+
+// Adiciona botões de navegação no HTML e adiciona os event listeners correspondentes
+document.getElementById("avancar-btn").addEventListener("click", avancarPagina);
+document.getElementById("retroceder-btn").addEventListener("click", retrocederPagina);

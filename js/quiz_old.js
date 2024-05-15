@@ -1,8 +1,9 @@
-// Variáveis globais para controlar a página atual e o número total de páginas
+// Variável para controlar se as perguntas foram embaralhadas
 var paginaAtual = 1;
 var totalPaginas = 0;
 var perguntasSelecionadas = [];
 var perguntasEmbaralhadas = [];
+var respostasQuiz = {}; // Objeto para armazenar as respostas
 
 // Função para embaralhar as perguntas apenas uma vez
 function embaralharPerguntas() {
@@ -11,9 +12,6 @@ function embaralharPerguntas() {
 
 // Função para exibir o quiz na interface do usuário
 function exibirQuiz() {
-  // Recupera as respostas previamente selecionadas pelo usuário, se existirem
-  var respostasSalvas = JSON.parse(localStorage.getItem("respostasQuiz")) || {};
-
   var quizContainer = document.getElementById("quiz-container");
 
   // Limpa o conteúdo do contêiner do quiz antes de exibir as novas perguntas
@@ -24,7 +22,7 @@ function exibirQuiz() {
   var indiceFinal = Math.min(indiceInicial + 5, perguntasSelecionadas.length);
 
   for (var i = indiceInicial; i < indiceFinal; i++) {
-    var pergunta = perguntasSelecionadas[i];
+    var pergunta = perguntasEmbaralhadas[i];
     var perguntaNumero = i + 1;
 
     // Cria um elemento para a pergunta
@@ -32,11 +30,15 @@ function exibirQuiz() {
     perguntaElement.classList.add("question");
     perguntaElement.setAttribute("data-pergunta", perguntaNumero);
 
-    var respostaSelecionada = respostasSalvas[perguntaNumero];
+    // Recupera a resposta selecionada pelo usuário, se existir
+    var respostaSelecionada = respostasQuiz[perguntaNumero];
 
     // Se uma resposta foi salva previamente, seleciona-a novamente
     if (respostaSelecionada) {
-      perguntaElement.setAttribute("data-resposta", respostaSelecionada);
+      perguntaElement.setAttribute(
+        "data-resposta",
+        respostaSelecionada.opcaoSelecionada
+      );
     }
 
     perguntaElement.innerHTML =
@@ -50,22 +52,39 @@ function exibirQuiz() {
     pergunta.opcoes.forEach(function (opcao, opcaoIndex) {
       var opcaoItem = document.createElement("li");
       opcaoItem.classList.add("option");
-      opcaoItem.setAttribute("data-pergunta", perguntaNumero); // Adiciona um atributo para identificar a pergunta
+      opcaoItem.setAttribute("data-pergunta", perguntaNumero);
       opcaoItem.setAttribute(
         "data-opcao",
         String.fromCharCode(97 + opcaoIndex)
-      ); // Adiciona um atributo para identificar a opção (a, b, c, ...)
+      );
       opcaoItem.setAttribute(
         "data-resposta",
         opcao.correta ? "correta" : "incorreta"
-      ); // Adiciona um atributo para identificar se a resposta é correta
-      opcaoItem.innerHTML =
-        '<input type="radio" name="q' +
-        perguntaNumero +
-        '" value="' +
-        String.fromCharCode(97 + opcaoIndex) + // Define o valor como a letra correspondente (a, b, c, ...)
-        '" ' + (respostaSelecionada === String.fromCharCode(97 + opcaoIndex) ? 'checked="checked"' : '') + ' /> ' + // Se essa opção foi selecionada anteriormente, marca o radio
-        opcao.texto;
+      );
+
+      // Verifica se essa opção foi selecionada anteriormente
+      if (
+        respostaSelecionada &&
+        respostaSelecionada.opcaoSelecionada ===
+          String.fromCharCode(97 + opcaoIndex)
+      ) {
+        opcaoItem.innerHTML =
+          '<input type="radio" name="q' +
+          perguntaNumero +
+          '" value="' +
+          String.fromCharCode(97 + opcaoIndex) +
+          '" checked="checked" /> ' +
+          opcao.texto;
+      } else {
+        opcaoItem.innerHTML =
+          '<input type="radio" name="q' +
+          perguntaNumero +
+          '" value="' +
+          String.fromCharCode(97 + opcaoIndex) +
+          '" /> ' +
+          opcao.texto;
+      }
+
       opcoesList.appendChild(opcaoItem);
     });
 
@@ -81,38 +100,13 @@ function exibirQuiz() {
     // Adiciona a pergunta ao contêiner do quiz
     quizContainer.appendChild(perguntaElement);
   }
-
-  // Adiciona um evento de clique para cada opção de resposta
-  document.querySelectorAll(".option").forEach(function (option) {
-    option.addEventListener("click", function () {
-      var pergunta = this.getAttribute("data-pergunta"); // Obtém o número da pergunta
-      var opcaoSelecionada = this.getAttribute("data-opcao"); // Obtém o número da opção selecionada
-
-      // Salva a resposta selecionada pelo usuário no armazenamento local
-      var respostasSalvas = JSON.parse(localStorage.getItem("respostasQuiz")) || {};
-      respostasSalvas[pergunta] = opcaoSelecionada;
-      localStorage.setItem("respostasQuiz", JSON.stringify(respostasSalvas));
-    });
-  });
 }
-
-// Função para limpar as respostas armazenadas no localStorage
-function limparRespostasArmazenadas() {
-  localStorage.removeItem("respostasQuiz");
-}
-
-// Adicione um botão para limpar respostas no HTML
-var limparBtn = document.createElement("button");
-limparBtn.textContent = "Limpar Respostas";
-limparBtn.addEventListener("click", limparRespostasArmazenadas);
-document.getElementById("quiz-container").appendChild(limparBtn);
-
 
 // Função para avançar para a próxima página
 function avancarPagina() {
   // Verifica se todas as perguntas foram respondidas antes de avançar
   var todasRespondidas = verificarTodasRespondidas();
-  
+
   if (paginaAtual < totalPaginas && todasRespondidas) {
     paginaAtual++;
     exibirQuiz();
@@ -135,85 +129,21 @@ document
   .getElementById("retroceder-btn")
   .addEventListener("click", retrocederPagina);
 
-// Função para embaralhar um array
-function shuffleArray(array) {
-  for (var i = array.length - 1; i > 0; i--) {
-    var j = Math.floor(Math.random() * (i + 1));
-    var temp = array[i];
-    array[i] = array[j];
-    array[j] = temp;
-  }
-  return array;
+// Função para limpar as respostas armazenadas na memória
+function limparRespostasArmazenadas() {
+  respostasQuiz = {};
 }
 
-// Função para selecionar aleatoriamente as perguntas do arquivo JSON
-function selecionarPerguntas(perguntas, quantidade) {
-  // Embaralha as perguntas para garantir variedade na seleção
-  var perguntasEmbaralhadas = shuffleArray(perguntas);
-  // Seleciona as primeiras "quantidade" perguntas
-  return perguntasEmbaralhadas.slice(0, quantidade);
-}
-
-// Função para exibir feedback
-function exibirFeedback(pergunta, opcaoSelecionada, resposta) {
-  // Obtém o elemento de feedback para esta pergunta
-  var feedbackDiv = document.getElementById("feedback" + pergunta);
-
-  // Altera a seleção da alternativa
-  document.querySelector(
-    '.option[data-pergunta="' +
-      pergunta +
-      '"][data-opcao="' +
-      opcaoSelecionada +
-      '"] input'
-  ).checked = true;
-
-  // Remove as classes de feedback anteriores das opções da mesma pergunta
-  document
-    .querySelectorAll('.option[data-pergunta="' + pergunta + '"]')
-    .forEach(function (opt) {
-      opt.classList.remove("correct", "incorrect");
-    });
-
-  // Verifica se a resposta selecionada está correta
-  if (resposta === "correta") {
-    feedbackDiv.innerHTML = "<span class='correct'>&#x2714; Correto!</span>";
-    document
-      .querySelector(
-        '.option[data-pergunta="' +
-          pergunta +
-          '"][data-opcao="' +
-          opcaoSelecionada +
-          '"]'
-      )
-      .classList.add("correct");
-  } else {
-    // Obtém a letra da opção correta
-    var respostaCorreta = document
-      .querySelector(
-        '.option[data-pergunta="' + pergunta + '"][data-resposta="correta"]'
-      )
-      .getAttribute("data-opcao");
-    feedbackDiv.innerHTML =
-      "<span class='incorrect'>&#x2718; Errado! A resposta correta era: " +
-      respostaCorreta.toUpperCase() +
-      " </span>";
-    document
-      .querySelector(
-        '.option[data-pergunta="' +
-          pergunta +
-          '"][data-opcao="' +
-          opcaoSelecionada +
-          '"]'
-      )
-      .classList.add("incorrect");
-  }
-}
+// Adicione um botão para limpar respostas no HTML
+var limparBtn = document.createElement("button");
+limparBtn.textContent = "Limpar Respostas";
+limparBtn.addEventListener("click", limparRespostasArmazenadas);
+document.getElementById("quiz-container").appendChild(limparBtn);
 
 // Função para verificar se todas as perguntas foram respondidas
 function verificarTodasRespondidas() {
   var todasRespondidas = true;
-  document.querySelectorAll(".question").forEach(function(question) {
+  document.querySelectorAll(".question").forEach(function (question) {
     var perguntaRespondida = question.querySelector("input:checked");
     if (!perguntaRespondida) {
       todasRespondidas = false;
@@ -223,23 +153,15 @@ function verificarTodasRespondidas() {
   return todasRespondidas;
 }
 
-// Adiciona um evento de clique para cada opção de resposta
-document.querySelectorAll(".option").forEach(function (option) {
-  option.addEventListener("click", function () {
-    var pergunta = this.getAttribute("data-pergunta"); // Obtém o número da pergunta
-    var opcaoSelecionada = this.getAttribute("data-opcao"); // Obtém o número da opção selecionada
-    var resposta = this.getAttribute("data-resposta"); // Obtém se a resposta é correta ou não
-
-    exibirFeedback(pergunta, opcaoSelecionada, resposta);
-  });
-});
-
 // Carrega o arquivo JSON com as perguntas
+// Neste exemplo, assumimos que o arquivo JSON está na mesma pasta e se chama "perguntas.json"
 fetch("data/perguntas.json")
   .then((response) => response.json())
   .then((data) => {
-    // Seleciona aleatoriamente as 20 perguntas
-    perguntasSelecionadas = selecionarPerguntas(data, 20);
+    // Seleciona aleatoriamente as perguntas e embaralha apenas uma vez
+    perguntasSelecionadas = data;
+    embaralharPerguntas();
+
     totalPaginas = Math.ceil(perguntasSelecionadas.length / 5);
 
     // Exibe o quiz com as perguntas selecionadas

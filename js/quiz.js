@@ -70,6 +70,11 @@ function exibirQuiz() {
 
     // Adiciona a pergunta ao contêiner do quiz
     quizContainer.appendChild(perguntaElement);
+
+    // Se a resposta foi selecionada anteriormente, exibe o feedback correspondente
+    if (respostasQuiz[perguntaNumero]) {
+      exibirFeedback(perguntaNumero, respostaSelecionada, respostasQuiz[perguntaNumero].resposta);
+    }
   }
 
   // Adiciona um evento de clique para cada opção de resposta

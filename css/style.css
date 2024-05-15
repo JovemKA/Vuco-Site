@@ -115,3 +115,12 @@ button:hover {
   color: white;
   font-weight: bold;
 }
+
+/* Estilo para as imagens das perguntas */
+.question img {
+  max-width: 40%; /* Garante que a imagem não ultrapasse o contêiner pai */
+  height: auto; /* Mantém a proporção da imagem */
+  display: block; /* Garante que a imagem fique centralizada horizontalmente */
+  margin: 20px 10px; /* Espaçamento entre a imagem e as opções de resposta */
+  justify-self:left;
+}

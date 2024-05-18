@@ -32,6 +32,19 @@ html {
   border-bottom: 4px solid #69d6de;
 }
 
+.titulo-sobre{
+  position: relative;
+  display: inline-block;
+}
+
+.titulo-sobre::after{
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 50%;
+  border-bottom: 4px solid #69d6de;
+}
 /* Estilo geral do header */
 header {
   background: linear-gradient(to right,#1b8cbc, #69d6de);
@@ -444,6 +457,9 @@ a {
   .img_grupo, .img_sobre {
     width: 400px;
   }
+  .titulo-sobre::after{
+    width: 25%;
+  }
 }
 
 @media (max-width: 425px) {
@@ -454,5 +470,11 @@ a {
   .footerLink {
     width: 300px;
     text-align: center;
+  }
+}
+
+@media (max-width: 400px) {
+  .titulo-sobre::after{
+    width: 50%;
   }
 }

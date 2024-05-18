@@ -10,6 +10,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
   <title>Vuco - Home</title>
 </head>
 
@@ -29,7 +30,7 @@
   </header>
 
   <main>
-    <div id="sobre">
+    <div id="sobre" data-aos="fade-right" data-aos-duration="1000">
       <img class="img_sobre" src="./img/sobre.png" alt="foto de sobre o projeto">
       
       <div class="content">
@@ -41,22 +42,10 @@
         </p>
       </div>
     </div>
+
     <div id="grupo">
-      <h1 class="titulo">Informações do grupo</h1>
-      <!-- <div class="content" > --> 
-        <!-- <h1 class="titulo">Informações do Grupo</h1>
-        <p>
-          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Numquam
-          deleniti aliquam quasi ad, sapiente qui odio modi iusto commodi
-          inventore totam quo tempore ea omnis culpa illo, sequi distinctio
-          debitis? Lorem ipsum dolor sit amet consectetur adipisicing elit.
-          Amet minima quos vitae odio magnam debitis. Sit vitae earum
-          repellat. Obcaecati labore atque aliquid facere reprehenderit
-          eligendi velit voluptate sit laboriosam?Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia
-          debitis ducimus exercitationem laborum recusandae, consequatur molestias expedita facere maiores reiciendis
-          deleniti, impedit minima corporis amet odit illo. Nam, error. Aliquid!
-        </p> -->
-        <div class="slide-container swiper">
+      <h1 data-aos="fade-up"  data-aos-anchor-placement="top-bottom" data-aos-duration="1000" class="titulo-sobre">Informações do grupo</h1>
+        <div data-aos="fade-up"  data-aos-anchor-placement="top-bottom" data-aos-duration="1000" class="slide-container swiper">
           <div class="slide-content">
               <div class="card-wrapper swiper-wrapper">
                   <div class="card swiper-slide">
@@ -307,19 +296,19 @@
           <div class="swiper-button-prev swiper-navBtn"></div>
           <div class="swiper-pagination"></div>
         </div>
-      <!-- </div> -->
-      <!-- <img class="img_grupo" src="./img/grupo.png" alt="foto de informações do grupo"> -->
     </div>
-    <div id="mapa">
-      <img class="img_mapa" src="./img/mapa.jpeg" alt="foto do mapa">
+    
+    <div id="mapa" data-aos="fade-up-left" data-aos-duration="1000">
+        <div class="content" >
+          <h1 class="titulo">Mapa</h1>
+          <p>
+            Localidade do Recife onde foi trabalhado e aplicado o V.U.C.O. 
+            Começando pela rua tal e seguindo pelo lugar tal, dando ênfase no lugar tal e por fim, chegando no lugar tal.
+          </p>
+        </div>
 
-      <div class="content" >
-        <h1 class="titulo">Mapa</h1>
-        <p>
-          Localidade do Recife onde foi trabalhado e aplicado o V.U.C.O. 
-          Começando pela rua tal e seguindo pelo lugar tal, dando ênfase no lugar tal e por fim, chegando no lugar tal.
-        </p>
-      </div>
+        <img class="img_mapa" src="./img/mapa.jpeg" alt="foto do mapa">
+
     </div>
     <div class="container">
       <div class="content" id="quiz">
@@ -380,9 +369,13 @@
         <p class="footerLink  ">Made by class Catolica 💗</p>
         
     </div>
-</footer>
-<script src="./js/swiper-bundle.min.js"></script>
-<script src="./js/script.js"></script>
+   </footer>
+    <script src="./js/swiper-bundle.min.js"></script>
+    <script src="./js/script.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
 </body>
 
 </html>

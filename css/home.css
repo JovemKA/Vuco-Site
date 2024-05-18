@@ -18,6 +18,20 @@ html {
   gap: 1.5rem;
 
 }
+.titulo {
+  position: relative;
+  display: inline-block;
+}
+
+.titulo::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 50%;
+  border-bottom: 2px solid #69d6de;
+}
+
 /* Estilo geral do header */
 header {
   background: linear-gradient(to right,#1b8cbc, #69d6de);
@@ -100,7 +114,7 @@ nav a:hover::after {
   align-items: center;
   gap: 1rem;
   padding: 4rem;
-  /* flex-direction: column; */
+  flex-direction: column;
 }
 
 
@@ -197,6 +211,7 @@ nav a:hover::after {
   justify-content: center;
   align-items: center;
   margin-bottom: 3rem;
+  
   /* Alinha os itens verticalmente no centro */
 }
 .content{
@@ -211,7 +226,7 @@ nav a:hover::after {
 /* SECTION FOOTER */
 /* SECTION FOOTER */
 footer {
-  border: 1px solid black;
+  border: 1px solid #1b8cbc;
   display: flex;
   justify-content: space-around;
   align-items: center;

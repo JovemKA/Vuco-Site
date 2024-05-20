@@ -478,3 +478,25 @@ a {
     width: 50%;
   }
 }
+
+/* Estiliza a largura da barra de rolagem */
+::-webkit-scrollbar {
+  width: 8px; /* Largura da barra de rolagem vertical */
+  height: 6px; /* Altura da barra de rolagem horizontal */
+}
+
+/* Estiliza o fundo da barra de rolagem */
+::-webkit-scrollbar-track {
+  background: #cacaca; /* Cor de fundo da trilha da barra de rolagem */
+}
+
+/* Estiliza a parte deslizante da barra de rolagem */
+::-webkit-scrollbar-thumb {
+  background: #049ce4; /* Cor da parte deslizante */
+  border-radius: 6px; /* Bordas arredondadas da parte deslizante */
+}
+
+/* Estiliza a parte deslizante da barra de rolagem quando está sendo ativa */
+::-webkit-scrollbar-thumb:hover {
+  background: #1b8cbc; /* Cor da parte deslizante quando o mouse passa sobre ela */
+}

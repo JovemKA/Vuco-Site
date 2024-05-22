@@ -96,6 +96,8 @@ body{
     color: #707070;
     text-align: center;
     padding-top: 7px;
+    height: 100px;
+    overflow: hidden;
 }
 .button{
     border: none;

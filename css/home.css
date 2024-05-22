@@ -145,6 +145,7 @@ nav a:hover::after {
 
 .img_mapa {
   width: 100vw;
+  height: 600px;
 }
 
 /* Container para centralizar o conteúdo */

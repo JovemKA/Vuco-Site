@@ -109,7 +109,7 @@ function limparRespostasArmazenadas() {
   respostasQuiz = {};
 }
 
-// Adicione um botão para limpar respostas no HTML
+// Adiciona um botão para limpar respostas no HTML
 var limparBtn = document.createElement("button");
 limparBtn.textContent = "Limpar Respostas";
 limparBtn.addEventListener("click", limparRespostasArmazenadas);
@@ -236,16 +236,6 @@ fetch("data/perguntas.json")
   })
   .catch((error) => console.error("Erro ao carregar as perguntas:", error));
 
-function navBar() {
-  let nav = document.querySelector(".nav");
-  if (nav.classList.contains("open")) {
-    nav.classList.remove("open");
-  } else {
-    nav.classList.add("open");
-  }
-}
-
 document.getElementById("avancar-btn").addEventListener("click", avancarPagina);
-document
-  .getElementById("retroceder-btn")
-  .addEventListener("click", retrocederPagina);
+document.getElementById("retroceder-btn").addEventListener("click", retrocederPagina);
+

@@ -1,9 +1,9 @@
 // Variável para controlar a página atual e outras variáveis globais
 var paginaAtual = 1;
 var totalPaginas = 0;
+var totalPerguntas = 0;
 var perguntasSelecionadas = [];
 var perguntasEmbaralhadas = [];
-// Cria um objeto para armazenar as respostas
 var respostasQuiz = {};
 
 // Função para embaralhar as perguntas apenas uma vez
@@ -14,11 +14,7 @@ function embaralharPerguntas() {
 // Função para exibir o quiz na interface do usuário
 function exibirQuiz() {
   var quizContainer = document.getElementById("quiz-container");
-
-  // Limpa o conteúdo do contêiner do quiz antes de exibir as novas perguntas
   quizContainer.innerHTML = "";
-
-  // Calcula o índice inicial e final do grupo de perguntas a ser exibido
   var indiceInicial = (paginaAtual - 1) * 5;
   var indiceFinal = Math.min(indiceInicial + 5, perguntasSelecionadas.length);
 
@@ -26,18 +22,15 @@ function exibirQuiz() {
     var pergunta = perguntasEmbaralhadas[i];
     var perguntaNumero = i + 1;
 
-    // Cria um elemento para a pergunta
     var perguntaElement = document.createElement("div");
     perguntaElement.classList.add("question");
     perguntaElement.setAttribute("data-pergunta", perguntaNumero);
 
     var respostaSelecionada = respostasQuiz[perguntaNumero]?.opcaoSelecionada;
 
-    // Adiciona a pergunta ao elemento
     perguntaElement.innerHTML =
       "<h3>" + perguntaNumero + ". " + pergunta.pergunta + "</h3>";
 
-    // Adiciona a imagem da pergunta, se existir
     if (pergunta.imagem) {
       var imagemElement = document.createElement("img");
       imagemElement.src = pergunta.imagem;
@@ -45,11 +38,9 @@ function exibirQuiz() {
       perguntaElement.appendChild(imagemElement);
     }
 
-    // Cria uma lista de opções de resposta
     var opcoesList = document.createElement("ul");
     opcoesList.classList.add("options");
 
-    // Adiciona cada opção de resposta à lista
     pergunta.opcoes.forEach(function (opcao, opcaoIndex) {
       var opcaoItem = document.createElement("li");
       opcaoItem.classList.add("option");
@@ -68,25 +59,20 @@ function exibirQuiz() {
       opcoesList.appendChild(opcaoItem);
     });
 
-    // Adiciona a lista de opções à pergunta
     perguntaElement.appendChild(opcoesList);
 
-    // Adiciona o espaço para feedback
     var feedbackDiv = document.createElement("div");
     feedbackDiv.classList.add("feedback");
     feedbackDiv.id = "feedback" + perguntaNumero;
     perguntaElement.appendChild(feedbackDiv);
 
-    // Adiciona a pergunta ao contêiner do quiz
     quizContainer.appendChild(perguntaElement);
 
-    // Se a resposta foi selecionada anteriormente, exibe o feedback correspondente
     if (respostasQuiz[perguntaNumero]) {
       exibirFeedback(perguntaNumero, respostaSelecionada, respostasQuiz[perguntaNumero].resposta);
     }
   }
 
-  // Adiciona um evento de clique para cada opção de resposta
   document.querySelectorAll(".option").forEach(function (option) {
     option.addEventListener("click", function () {
       var pergunta = this.getAttribute("data-pergunta");
@@ -95,7 +81,6 @@ function exibirQuiz() {
 
       exibirFeedback(pergunta, opcaoSelecionada, resposta);
 
-      // Armazena a resposta no objeto respostasQuiz
       respostasQuiz[pergunta] = {
         opcaoSelecionada: opcaoSelecionada,
         resposta: resposta
@@ -104,41 +89,39 @@ function exibirQuiz() {
   });
 }
 
-// Função para limpar as respostas armazenadas na memória
 function limparRespostasArmazenadas() {
   respostasQuiz = {};
+  paginaAtual = 1; // Reset the current page to 1 when clearing answers
+  exibirQuiz(); // Re-render the quiz to reflect cleared answers
 }
 
-// Adiciona um botão para limpar respostas no HTML
 var limparBtn = document.createElement("button");
 limparBtn.textContent = "Limpar Respostas";
 limparBtn.addEventListener("click", limparRespostasArmazenadas);
 document.getElementById("quiz-container").appendChild(limparBtn);
 
-// Função para avançar para a próxima página
 function avancarPagina() {
-  // Verifica se todas as perguntas da página atual foram respondidas antes de avançar
   var todasRespondidas = verificarTodasRespondidas();
 
   if (paginaAtual < totalPaginas && todasRespondidas) {
     paginaAtual++;
     exibirQuiz();
-    window.scrollTo(0, 0); // Rolagem da página para o topo
+    window.scrollTo(0, 0);
   } else if (!todasRespondidas) {
     alert("Por favor, responda a todas as perguntas antes de avançar.");
+  } else if (paginaAtual === totalPaginas) {
+    exibirPontuacaoFinal();
   }
 }
 
-// Função para retroceder para a página anterior
 function retrocederPagina() {
   if (paginaAtual > 1) {
     paginaAtual--;
     exibirQuiz();
-    window.scrollTo(0, 0); // Move para o topo do site
+    window.scrollTo(0, 0);
   }
 }
 
-// Função para verificar se todas as perguntas da página atual foram respondidas
 function verificarTodasRespondidas() {
   var todasRespondidas = true;
   var indiceInicial = (paginaAtual - 1) * 5;
@@ -154,7 +137,39 @@ function verificarTodasRespondidas() {
   return todasRespondidas;
 }
 
-// Função para embaralhar um array
+function calcularPontuacao() {
+  let pontuacao = 0;
+  for (const resposta in respostasQuiz) {
+    if (respostasQuiz[resposta].resposta === "correta") {
+      pontuacao++;
+    }
+  }
+  return pontuacao;
+}
+
+function exibirPontuacaoFinal() {
+  var pontuacaoFinal = calcularPontuacao();
+  var modal = document.getElementById("scoreModal");
+  var scoreText = document.getElementById("scoreText");
+
+  scoreText.textContent = "Sua pontuação final é: " + pontuacaoFinal + " de " + totalPerguntas;
+  modal.style.display = "flex"; // Altera o estilo para flex
+
+  // Definir evento de clique para fechar o modal
+  var span = document.getElementsByClassName("close")[0];
+  span.onclick = function() {
+    modal.style.display = "none";
+  }
+
+  // Fecha o modal se clicar fora da área do modal
+  window.onclick = function(event) {
+    if (event.target == modal) {
+      modal.style.display = "none";
+    }
+  }
+}
+
+
 function shuffleArray(array) {
   for (var i = array.length - 1; i > 0; i--) {
     var j = Math.floor(Math.random() * (i + 1));
@@ -165,12 +180,8 @@ function shuffleArray(array) {
   return array;
 }
 
-// Função para exibir feedback
 function exibirFeedback(pergunta, opcaoSelecionada, resposta) {
-  // Obtém o elemento de feedback para esta pergunta
   var feedbackDiv = document.getElementById("feedback" + pergunta);
-
-  // Altera a seleção da alternativa
   document.querySelector(
     '.option[data-pergunta="' +
       pergunta +
@@ -179,14 +190,12 @@ function exibirFeedback(pergunta, opcaoSelecionada, resposta) {
       '"] input'
   ).checked = true;
 
-  // Remove as classes de feedback anteriores das opções da mesma pergunta
   document
     .querySelectorAll('.option[data-pergunta="' + pergunta + '"]')
     .forEach(function (opt) {
       opt.classList.remove("correct", "incorrect");
     });
 
-  // Verifica se a resposta selecionada está correta
   if (resposta === "correta") {
     feedbackDiv.innerHTML = "<span class='correct'>&#x2714; Correto!</span>";
     document
@@ -199,16 +208,14 @@ function exibirFeedback(pergunta, opcaoSelecionada, resposta) {
       )
       .classList.add("correct");
   } else {
-    // Obtém a letra da opção correta
     var respostaCorreta = document
       .querySelector(
         '.option[data-pergunta="' + pergunta + '"][data-resposta="correta"]'
-      )
-      .getAttribute("data-opcao");
+      );
     feedbackDiv.innerHTML =
       "<span class='incorrect'>&#x2718; Errado! A resposta correta era: " +
-      respostaCorreta.toLowerCase() +
-      ") </span>";
+      respostaCorreta.innerText +
+      "</span>";
     document
       .querySelector(
         '.option[data-pergunta="' +
@@ -221,21 +228,16 @@ function exibirFeedback(pergunta, opcaoSelecionada, resposta) {
   }
 }
 
-// Carrega o arquivo JSON com as perguntas
 fetch("data/perguntas.json")
   .then((response) => response.json())
   .then((data) => {
-    // Seleciona aleatoriamente as perguntas e embaralha apenas uma vez
     perguntasSelecionadas = data;
+    totalPerguntas = perguntasSelecionadas.length;
     embaralharPerguntas();
-
     totalPaginas = Math.ceil(perguntasSelecionadas.length / 5);
-
-    // Exibe o quiz com as perguntas selecionadas
     exibirQuiz();
   })
   .catch((error) => console.error("Erro ao carregar as perguntas:", error));
 
 document.getElementById("avancar-btn").addEventListener("click", avancarPagina);
 document.getElementById("retroceder-btn").addEventListener("click", retrocederPagina);
-

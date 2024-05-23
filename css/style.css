@@ -7,13 +7,14 @@
 
 /* Estilos globais */
 body {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   background-color: #f5f5f5;
+  line-height: 1.6;
 }
 
 /* Estilos do header */
 header {
-  background: linear-gradient(to right,#1b8cbc, #69d6de);
+  background: linear-gradient(to right, #1b8cbc, #69d6de);
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   display: flex;
   justify-content: space-between;
@@ -36,7 +37,8 @@ header {
 main {
   margin: 0;
   padding: 45px;
-  margin-top: 80px; /* Adiciona uma margem superior igual à altura da header */
+  margin-top: 80px;
+  /* Adiciona uma margem superior igual à altura da header */
 }
 
 /* Estilo para o conteúdo dentro de main */
@@ -91,7 +93,7 @@ main h1 {
 button {
   padding: 10px 20px;
   font-size: 16px;
-  background-color: #4CAF50;
+  background-color: #4caf50;
   color: white;
   border: none;
   border-radius: 5px;
@@ -124,11 +126,15 @@ button:hover {
 
 /* Estilos para as imagens das perguntas */
 .question img {
-  max-width: 40%; /* Garante que a imagem não ultrapasse o contêiner pai */
-  height: auto; /* Mantém a proporção da imagem */
-  display: block; /* Garante que a imagem fique centralizada horizontalmente */
-  margin: 20px 10px; /* Espaçamento entre a imagem e as opções de resposta */
-  justify-self:left;
+  max-width: 40%;
+  /* Garante que a imagem não ultrapasse o contêiner pai */
+  height: auto;
+  /* Mantém a proporção da imagem */
+  display: block;
+  /* Garante que a imagem fique centralizada horizontalmente */
+  margin: 20px 10px;
+  /* Espaçamento entre a imagem e as opções de resposta */
+  justify-self: left;
 }
 
 .content {
@@ -142,13 +148,14 @@ button:hover {
 
 /* Estilos para o formulário do quiz */
 #quiz-container {
-  max-width: 800px; /* Define a largura máxima do quiz */
+  max-width: 800px;
+  /* Define a largura máxima do quiz */
 }
 
 .quiz-container {
   width: calc(70% - 20px);
   padding: 20px;
-  background: linear-gradient(to right,#1b8cbc, #69d6de);
+  background: linear-gradient(to right, #1b8cbc, #69d6de);
   border-radius: 10px;
   box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
 }
@@ -160,20 +167,24 @@ button:hover {
   border-radius: 10px;
   box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
   position: sticky;
-  top: 100px; /* Ajuste para manter a barra de navegação fixa abaixo do header */
+  top: 100px;
+  /* Ajuste para manter a barra de navegação fixa abaixo do header */
 }
 
 /* Estilos para a lista de perguntas */
 .question-list {
-  width: 100%; /* Ocupa toda a largura disponível */
+  width: 100%;
+  /* Ocupa toda a largura disponível */
 }
 
 .question-list ol {
   list-style: none;
   padding: 0;
   display: grid;
-  grid-template-columns: repeat(5, 1fr); /* 5 colunas com largura igual */
-  gap: 10px; /* Espaçamento entre os itens */
+  grid-template-columns: repeat(5, 1fr);
+  /* 5 colunas com largura igual */
+  gap: 10px;
+  /* Espaçamento entre os itens */
   margin-bottom: 20px;
 }
 
@@ -187,15 +198,18 @@ button:hover {
 
 .navigation-buttons {
   display: flex;
-  justify-content: space-between; /* Espaça os botões igualmente */
+  justify-content: space-between;
+  /* Espaça os botões igualmente */
 }
 
 .navigation-buttons button {
-  flex: 1; /* Distribui o espaço disponível igualmente entre os botões */
-  margin: 0 5px; /* Margem entre os botões */
+  flex: 1;
+  /* Distribui o espaço disponível igualmente entre os botões */
+  margin: 0 5px;
+  /* Margem entre os botões */
   padding: 10px 20px;
   font-size: 16px;
-  background-color: #4CAF50;
+  background-color: #4caf50;
   color: white;
   border: none;
   border-radius: 5px;
@@ -205,4 +219,104 @@ button:hover {
 
 .navigation-buttons button:hover {
   background-color: #45a049;
+}
+
+
+
+
+/* Estilos para o modal */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.4);
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-content {
+  position: relative;
+  width: 300px;
+  height: 200px;
+  border-radius: 14px;
+  z-index: 1111;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 20px 20px 60px #bebebe, -20px -20px 60px #ffffff;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(24px);
+  border-radius: 10px;
+  outline: 2px solid white;
+  text-align: center;
+}
+
+.bg {
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  width: 290px;
+  height: 190px;
+  padding: 10px;
+  z-index: 2;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(24px);
+  border-radius: 10px;
+  overflow: hidden;
+  outline: 2px solid white;
+}
+
+.blob {
+  position: absolute;
+  z-index: 1;
+  top: 50%;
+  left: 50%;
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  background-color: #69d6de;
+  opacity: 1;
+  filter: blur(12px);
+  animation: blob-bounce 5s infinite ease;
+}
+
+@keyframes blob-bounce {
+  0% {
+    transform: translate(-100%, -100%) translate3d(0, 0, 0);
+  }
+  25% {
+    transform: translate(-100%, -100%) translate3d(100%, 0, 0);
+  }
+  50% {
+    transform: translate(-100%, -100%) translate3d(100%, 100%, 0);
+  }
+  75% {
+    transform: translate(-100%, -100%) translate3d(0, 100%, 0);
+  }
+  100% {
+    transform: translate(-100%, -100%) translate3d(0, 0, 0);
+  }
+}
+
+.close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  color: #aaa;
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
 }

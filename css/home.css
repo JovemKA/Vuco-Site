@@ -59,10 +59,11 @@ header {
   align-items: center;
   padding: 2rem;
   height: 75px;
-  position: fixed;
-  width: 100%;
+  /* position: fixed; */
+  /* width: 80vw; */
   z-index: 2;
-  
+  margin: 50px 70px 0px 70px;
+  border-radius: 15px;
 }
 
 main{
@@ -393,20 +394,29 @@ a {
   opacity: 1;
 }
 
-
-@media (max-width: 915px) {
-  #sobre , #mapa {
+@media (max-width: 1125px) {
+  #sobre {
     display: flex;
     flex-direction: column;
-  }
-
-  #sobre {
     text-align: center;
+
   }
 
   .content {
     width: auto;
   }
+
+}
+
+@media (max-width: 915px) {
+   #mapa {
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* #sobre {
+    text-align: center;
+  } */
 
 
 }
@@ -448,6 +458,11 @@ a {
 
     
   }
+
+  /* header {
+    position: fixed;
+    margin-inline: 50px;
+  } */
 
 }
 

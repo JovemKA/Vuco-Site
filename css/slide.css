@@ -55,9 +55,9 @@ body{
     height: 100%;
     width: 100%;
     background-color: #049ce4;
-    border-radius: 25px 25px 0px 25px;
+    border-radius: 25px 25px 25px 25px;
 }
-.overlay::before,
+/* .overlay::before,
 .overlay::after{
     content: '';
     position: absolute;
@@ -70,7 +70,7 @@ body{
 .overlay::after{
     border-radius: 0 25px 0 0;
     background-color: #FFF;
-}
+} */
 .card-image{
     position: relative;
     height: 150px;
@@ -103,10 +103,10 @@ body{
     border: none;
     font-size: 16px;
     color: #FFF;
-    padding: 8px 16px;
+    padding: 6px 14px;
     background-color: #049ce4;
     border-radius: 6px;
-    margin: 14px;
+    margin: 5px;
     cursor: pointer;
     transition: all 0.3s ease;
 }

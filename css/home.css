@@ -153,6 +153,37 @@ nav a:hover::after {
   height: 600px;
 }
 
+/* SECTION PATROCINADORES */
+
+#patrocinadores {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 3rem;
+  gap: 1rem;
+}
+
+.imgPatrocinadores{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+
+
+}
+
+.imgLogoPatrocinadores{
+  width: 250px;
+  height: 150px;
+  fill: black;
+
+
+}
+
+
+
+
 /* Container para centralizar o conteúdo */
 
 
@@ -257,14 +288,14 @@ footer {
 
 
 .listFooterTitle{
-  font-weight: 350;
+  font-weight: 450;
   font-size: 1.3rem;
-  color: darkgrey;
+  color: rgb(83, 83, 83);
 }
 
 .footerLink {
   font-size: 0.8rem;
-  font-weight: 150;
+  font-weight: 350;
   text-decoration: none;
   color: black;
 

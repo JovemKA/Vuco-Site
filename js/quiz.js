@@ -91,8 +91,8 @@ function exibirQuiz() {
 
 function limparRespostasArmazenadas() {
   respostasQuiz = {};
-  paginaAtual = 1; // Reset the current page to 1 when clearing answers
-  exibirQuiz(); // Re-render the quiz to reflect cleared answers
+  paginaAtual = 1;
+  exibirQuiz();
 }
 
 var limparBtn = document.createElement("button");
@@ -107,11 +107,10 @@ function avancarPagina() {
     paginaAtual++;
     exibirQuiz();
     window.scrollTo(0, 0);
+  } else if (!todasRespondidas) {
+    alert("Por favor, responda a todas as perguntas antes de avançar.");
+  } else if (paginaAtual === totalPaginas) {
     exibirPontuacaoFinal();
-  // } else if (!todasRespondidas) {
-  //   alert("Por favor, responda a todas as perguntas antes de avançar.");
-  // } else if (paginaAtual === totalPaginas) {
-  //   exibirPontuacaoFinal();
   }
 }
 

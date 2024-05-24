@@ -241,8 +241,8 @@ button:hover {
 
 .modal-content {
   position: relative;
-  width: 300px;
-  height: 200px;
+  width: 450px;
+  height: 300px;
   border-radius: 14px;
   z-index: 1111;
   overflow: hidden;
@@ -260,13 +260,13 @@ button:hover {
 
 .bg {
   position: absolute;
-  top: 5px;
-  left: 5px;
-  width: 290px;
-  height: 190px;
+  top: 8px;
+  left: 8px;
+  width: 435px;
+  height: 285px;
   padding: 10px;
   z-index: 2;
-  background: rgba(255, 255, 255, 0.95);
+  background: rgba(255, 255, 255);
   backdrop-filter: blur(24px);
   border-radius: 10px;
   overflow: hidden;
@@ -278,11 +278,10 @@ button:hover {
   z-index: 1;
   top: 50%;
   left: 50%;
-  width: 150px;
-  height: 150px;
+  width: 225px;
+  height: 225px;
   border-radius: 50%;
   background-color: #69d6de;
-  opacity: 1;
   filter: blur(12px);
   animation: blob-bounce 5s infinite ease;
 }

@@ -107,10 +107,11 @@ function avancarPagina() {
     paginaAtual++;
     exibirQuiz();
     window.scrollTo(0, 0);
-  } else if (!todasRespondidas) {
-    alert("Por favor, responda a todas as perguntas antes de avançar.");
-  } else if (paginaAtual === totalPaginas) {
     exibirPontuacaoFinal();
+  // } else if (!todasRespondidas) {
+  //   alert("Por favor, responda a todas as perguntas antes de avançar.");
+  // } else if (paginaAtual === totalPaginas) {
+  //   exibirPontuacaoFinal();
   }
 }
 
@@ -150,15 +151,49 @@ function calcularPontuacao() {
 function exibirPontuacaoFinal() {
   var pontuacaoFinal = calcularPontuacao();
   var modal = document.getElementById("scoreModal");
-  var scoreText = document.getElementById("scoreText");
+  var modalTitle = document.getElementById("modal-title");
+  var modalMessage = document.getElementById("modal-message");
+  var restartButton = document.getElementById("restart-button");
+  var homeButton = document.getElementById("home-button");
 
-  scoreText.textContent = "Sua pontuação final é: " + pontuacaoFinal + " de " + totalPerguntas;
+  // Definindo a mensagem e o título com base na pontuação
+  if (pontuacaoFinal >= 18) {
+    modalTitle.innerHTML = '🏆 Excelente!';
+    modalMessage.innerHTML = 'Sua pontuação final é ' + pontuacaoFinal + ' de ' + totalPerguntas + '.<br><br>Você conhece profundamente a cultura do Recife! Parabéns pelo seu excelente desempenho! 🌟';
+  } else if (pontuacaoFinal >= 14) {
+    modalTitle.innerHTML = '🎉 Bom trabalho!';
+    modalMessage.innerHTML = 'Sua pontuação final é ' + pontuacaoFinal + ' de ' + totalPerguntas + '.<br><br>Você tem um bom conhecimento sobre a cultura do Recife. Continue assim e você se tornará um expert! 🏖️';
+  } else if (pontuacaoFinal >= 8) {
+    modalTitle.innerHTML = '🌟 Razoável!';
+    modalMessage.innerHTML = 'Sua pontuação final é ' + pontuacaoFinal + ' de ' + totalPerguntas + '.<br><br>Você tem um conhecimento básico sobre a cultura do Recife. Que tal aprender mais e tentar novamente? 📚';
+  } else {
+    modalTitle.innerHTML = '💪 Continue tentando!';
+    modalMessage.innerHTML = 'Sua pontuação final é ' + pontuacaoFinal + ' de ' + totalPerguntas + '.<br><br>Não desanime! Recife tem muito a oferecer e aprender sobre sua cultura é uma jornada. Vamos tentar novamente? 🌍';
+  }
+
   modal.style.display = "flex"; // Altera o estilo para flex
 
   // Definir evento de clique para fechar o modal
   var span = document.getElementsByClassName("close")[0];
   span.onclick = function() {
     modal.style.display = "none";
+  }
+
+   // Botão para reiniciar o quiz
+   restartButton.onclick = function() {
+    modal.style.display = "none";
+    paginaAtual = 1; // Reinicia a página atual
+    // perguntasSelecionadas = perguntasEmbaralhadas.slice(); // Reinicia as perguntas
+    // embaralharPerguntas(); // Embaralha as perguntas
+    // exibirQuiz(); // Exibe o quiz
+    limparRespostasArmazenadas(); // Limpa as respostas armazenadas
+    window.scrollTo(0, 0); // Rolagem para o topo da página
+  }
+
+  // Botão para concluir e voltar para a home
+  homeButton.onclick = function() {
+    modal.style.display = "none";
+    window.location.href = "index.html";
   }
 
   // Fecha o modal se clicar fora da área do modal

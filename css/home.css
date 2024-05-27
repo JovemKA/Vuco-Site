@@ -5,7 +5,7 @@
   padding: 0;
 }
 
-body{
+body {
   line-height: 1.5;
 }
 
@@ -21,18 +21,18 @@ html {
   width: 50%;
   gap: 1.5rem;
   max-width: 610px;
-
 }
 
-.descrição{
+.descrição {
   max-width: 768px;
 }
-.titulo {
+
+.titulo, .titulo-sobre {
   position: relative;
   display: inline-block;
 }
 
-.titulo::after {
+.titulo::after, .titulo-sobre::after {
   content: '';
   position: absolute;
   left: 0;
@@ -41,38 +41,23 @@ html {
   border-bottom: 4px solid #69d6de;
 }
 
-.titulo-sobre{
-  position: relative;
-  display: inline-block;
-}
-
-.titulo-sobre::after{
-  content: '';
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  width: 50%;
-  border-bottom: 4px solid #69d6de;
-}
-/* Estilo geral do header */
 header {
-  background: linear-gradient(to right,#1b8cbc, #69d6de);
+  background: linear-gradient(to right, #1b8cbc, #69d6de);
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 2rem;
+  padding: 1rem 2rem;
   height: 75px;
-  /* position: fixed; */
-  /* width: 80vw; */
   z-index: 2;
-  margin: 50px 70px 0px 70px;
+  margin: 20px 70px 0px 70px;
   border-radius: 15px;
 }
 
-main{
+main {
   padding-top: 80px;
 }
+
 nav {
   display: flex;
   justify-content: center;
@@ -113,174 +98,52 @@ nav a:hover::after {
   display: none;
 }
 
-/* SECTION ID */
-#sobre {
+#sobre, #grupo, #mapa, #patrocinadores, #quiz {
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
   align-items: center;
   gap: 1.5rem;
+  padding: 3rem;
   margin: 4rem 3rem;
 }
 
-.img_sobre, .img_grupo {
-  width: 500px;
-  margin: 0px 0.7rem; 
+.img_sobre, .img_grupo, .img_mapa {
+  width: 100%;
+  max-width: 500px;
+  margin: 0px 0.7rem;
 }
-
-
-
-/* SECTION INFO DO GRUPO */
-
-#grupo {
-  display: flex;
-  /* justify-content: center; */
-  align-items: center;
-  gap: 1rem;
-  padding: 4rem;
-  flex-direction: column;
-}
-
-
-/* SECTION DO MAPA */
-#mapa {
-  display: flex;
-  /* justify-content: space-between; */
-  flex-direction: column;
-  align-items: center;
-  gap: 1.6rem;
-  padding: 3rem;
-}
-
-
-.img_mapa {
-  width: 100vw;
-  height: 600px;
-}
-
-/* SECTION PATROCINADORES */
 
 #patrocinadores {
-  display: flex;
-  flex-direction: column;
   justify-content: center;
-  align-items: center;
   margin-bottom: 3rem;
   gap: 1rem;
 }
 
-.imgPatrocinadores{
+.imgPatrocinadores {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-
-
 }
 
-.imgLogoPatrocinadores{
+.imgLogoPatrocinadores {
   width: 250px;
   height: 150px;
-  fill: black;
-
-
 }
 
-
-
-
-/* Container para centralizar o conteúdo */
-
-
-/* Logo do Airbnb
-.logo {
-  display: inline-block;
-}
-
-.logo img {
-  width: 150px;
-  /* Ajusta a largura do logo */
-  /* height: auto; */
-  /* Mantém a proporção da altura */
-/* } */
-
-/* Menu de usuário (sem links) */
-.user-menu {
-  display: inline-block;
-}
-
-.user-menu ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-.user-menu li {
-  display: inline-block;
-  margin-right: 10px;
-}
-
-.recife-esquerdo,
-.recife-direito {
-  position: absolute;
-  /* Posiciona as imagens de forma absoluta */
-  top: 50%;
-  /* Posiciona as imagens no meio vertical */
-  transform: translateY(-50%);
-  /* Compensa o deslocamento vertical */
-}
-
-.recife-esquerdo {
-  left: 0;
-  /* Posiciona a imagem à esquerda */
-}
-
-.recife-direito {
-  right: 0;
-  /* Posiciona a imagem à direita */
-}
-
-.recife-esquerdo img,
-.recife-direito img {
-  width: 100px;
-  /* Ajuste a largura das imagens */
-  height: auto;
-  /* Mantém a proporção da altura */
-}
-
-/* SECTION QUIZ */
 .container {
   max-width: 100%;
-  /* Limita a largura do container */
   margin: 0 auto;
-  /* Centraliza o container na tela */
   display: flex;
-  /* Define layout flexbox */
-  justify-content: center;
-  /* Centraliza os itens na horizontal */
-  align-items: center;
-  /* Alinha os itens verticalmente no centro */
-}
-
-#quiz {
-  display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin-bottom: 3rem;
-  
-  /* Alinha os itens verticalmente no centro */
-}
-.content{
-    max-width: 1200px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    margin-top: 50px;
 }
 
-/* SECTION FOOTER */
-/* SECTION FOOTER */
+.content {
+  max-width: 1200px;
+  margin-top: 50px;
+}
+
 footer {
   border: 1px solid #1b8cbc;
   display: flex;
@@ -290,8 +153,7 @@ footer {
   padding: 2rem 2rem;
 }
 
-
-.listFooterTitle{
+.listFooterTitle {
   font-weight: 450;
   font-size: 1.3rem;
   color: rgb(83, 83, 83);
@@ -302,7 +164,6 @@ footer {
   font-weight: 350;
   text-decoration: none;
   color: black;
-
 }
 
 .listFooter {
@@ -336,24 +197,22 @@ footer {
   width: 250px;
 }
 
-/* BUTTON QUIZ */ 
-
 a {
   text-decoration: none;
 }
+
 .animated-button {
   position: relative;
   display: flex;
   align-items: center;
   gap: 4px;
   padding: 16px 36px;
-  border: 4px solid;
-  border-color: transparent;
+  border: 4px solid transparent;
   font-size: 16px;
   background-color: inherit;
   border-radius: 100px;
   font-weight: 600;
-  color: #049ce4 ;
+  color: #049ce4;
   box-shadow: 0 0 0 2px #049ce4;
   cursor: pointer;
   overflow: hidden;
@@ -429,36 +288,27 @@ a {
   opacity: 1;
 }
 
+/* Media Queries */
 @media (max-width: 1125px) {
   #sobre {
-    display: flex;
     flex-direction: column;
     text-align: center;
-
   }
 
   .content {
     width: auto;
   }
-
 }
 
 @media (max-width: 915px) {
-   #mapa {
-    display: flex;
+  #mapa {
     flex-direction: column;
   }
-
-  /* #sobre {
-    text-align: center;
-  } */
-
-
 }
 
 @media (max-width: 761px) {
   .img_menu {
-    display:block;
+    display: block;
     width: 50px;
     margin-right: 1rem;
   }
@@ -480,7 +330,7 @@ a {
   }
 
   .open {
-    display: flex  ;
+    display: flex;
     position: fixed;
     top: 5vh;
     width: 100%;
@@ -489,27 +339,14 @@ a {
     left: 0;
     flex-direction: column;
     gap: 1.3rem;
-    transition: all .5s;
-
-    
+    transition: all 0.5s;
   }
-
-  /* header {
-    position: fixed;
-    margin-inline: 50px;
-  } */
-
 }
 
 @media (max-width: 686px) {
   footer {
-    display: flex;
     flex-direction: column;
     gap: 0;
-  }
-
-  footer:nth-child(2) {
-    order:1
   }
 
   .listFooter {
@@ -517,19 +354,19 @@ a {
   }
 }
 
-
 @media (max-width: 500px) {
   .img_grupo, .img_sobre {
-    width: 400px;
+    max-width: 400px;
   }
-  .titulo-sobre::after{
+
+  .titulo-sobre::after {
     width: 25%;
   }
 }
 
 @media (max-width: 425px) {
   .img_grupo, .img_sobre, .img_mapa {
-    width: 350px;
+    max-width: 350px;
   }
 
   .footerLink {
@@ -539,29 +376,26 @@ a {
 }
 
 @media (max-width: 400px) {
-  .titulo-sobre::after{
+  .titulo-sobre::after {
     width: 50%;
   }
 }
 
 /* Estiliza a largura da barra de rolagem */
 ::-webkit-scrollbar {
-  width: 8px; /* Largura da barra de rolagem vertical */
-  height: 6px; /* Altura da barra de rolagem horizontal */
+  width: 8px;
+  height: 6px;
 }
 
-/* Estiliza o fundo da barra de rolagem */
 ::-webkit-scrollbar-track {
-  background: #cacaca; /* Cor de fundo da trilha da barra de rolagem */
+  background: #cacaca;
 }
 
-/* Estiliza a parte deslizante da barra de rolagem */
 ::-webkit-scrollbar-thumb {
-  background: #049ce4; /* Cor da parte deslizante */
-  border-radius: 6px; /* Bordas arredondadas da parte deslizante */
+  background: #049ce4;
+  border-radius: 6px;
 }
 
-/* Estiliza a parte deslizante da barra de rolagem quando está sendo ativa */
 ::-webkit-scrollbar-thumb:hover {
-  background: #1b8cbc; /* Cor da parte deslizante quando o mouse passa sobre ela */
+  background: #333333;
 }

@@ -1,8 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+
 * {
   box-sizing: border-box;
   margin: 0;
-  font-family: 'Montserrat', sans-serif;
   padding: 0;
+  font-family: 'Montserrat', sans-serif;
 }
 
 body{
@@ -55,7 +57,18 @@ html {
   border-bottom: 4px solid #69d6de;
 }
 /* Estilo geral do header */
-header {
+
+.navbar-toggler {
+  border: none;
+  font-size: 1.25rem;
+}
+
+.navbar-toggler:focus {
+  box-shadow: none;
+  outline: none;
+}
+
+/* header {
   background: linear-gradient(to right,#1b8cbc, #69d6de);
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   display: flex;
@@ -63,35 +76,37 @@ header {
   align-items: center;
   padding: 2rem;
   height: 75px;
-  /* position: fixed; */
-  /* width: 80vw; */
-  z-index: 2;
+  position: fixed; */
+  /* /* width: 80vw; */
+  /* z-index: 2;
   margin: 50px 70px 0px 70px;
   border-radius: 15px;
-}
+} */ */
 
 main{
   padding-top: 80px;
 }
-nav {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 1rem;
+.navbar {
+  background: linear-gradient(to right,#1b8cbc, #69d6de);
+  height: 80px;
+  margin: 20px;
+  border-radius: 16px;
 }
 
-nav a {
+.nav-link {
   color: azure;
   text-decoration: none;
   position: relative;
-  font-size: 1rem;
-  font-weight: bold;
+  font-weight: 600;
+}
+.nav-link:hover, .nav-link:active {
+  color: azure;
 }
 
-nav a::after {
+.nav-link::after {
   content: '';
   position: absolute;
-  bottom: -5px;
+  bottom: 0px;
   left: 0;
   width: 0;
   height: 2px;
@@ -99,9 +114,27 @@ nav a::after {
   background-color: azure;
 }
 
-nav a:hover::after {
+.nav-link:hover::after {
   width: 100%;
 }
+
+@media (max-width: 991px) {
+  .nav-link{
+    color: gray
+  }
+
+  .nav-link:hover {
+    color: rgb(83, 81, 81);
+  }
+
+  .nav-link:active {
+    color: #1b8cbc;
+    transition:0.3s all;
+  }
+  
+  
+}
+ 
 
 .logo_img {
   width: 150px;
@@ -119,7 +152,7 @@ nav a:hover::after {
   justify-content: space-between;
   align-items: center;
   gap: 1.5rem;
-  margin: 4rem 3rem;
+  margin: 6rem 3rem;
 }
 
 .img_sobre, .img_grupo {
@@ -457,13 +490,13 @@ a {
 }
 
 @media (max-width: 761px) {
-  .img_menu {
+  /* .img_menu {
     display:block;
     width: 50px;
     margin-right: 1rem;
-  }
+  } */
 
-  .nav {
+  /* .nav {
     display: none;
   }
 
@@ -492,7 +525,7 @@ a {
     transition: all .5s;
 
     
-  }
+  } */
 
   /* header {
     position: fixed;

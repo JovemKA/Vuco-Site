@@ -4,13 +4,28 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./css/style.css" />
+    <link rel="stylesheet" href="./css/global.css" />
     <title>Vuco - Quiz</title>
   </head>
   <body>
     <header>
+      <!-- <div class="recife-esquerdo"></div> -->
       <a class="logo" href="index.html">
         <img class="logo_img" src="./img/VUCO_LOGO_NO_BG.png" alt="Logo" />
       </a>
+      <nav class="nav">
+        <a href="#sobre">Sobre o projeto</a>
+        <a href="#grupo">Informações do grupo</a>
+        <a href="#mapa">Mapa</a>
+        <a href="#patrocinadores">Patrocinadores</a>
+        <a href="#quiz">Quiz</a>
+      </nav>
+      <img
+        onclick="navBar()"
+        class="img_menu"
+        src="./img/menu-1-svgrepo-com (1).svg"
+        alt="foto do menu"
+      />
     </header>
     <main>
       <h1>Quiz sobre a cultura e a história de Recife</h1>
@@ -18,50 +33,73 @@
         <div class="quiz-container">
           <form id="quiz-container"></form>
         </div>
-        <div class="navigation-container">
-          <div class="question-list">
-            <ol>
-              <li>1</li>
-              <li>2</li>
-              <li>3</li>
-              <li>4</li>
-              <li>5</li>
-              <li>6</li>
-              <li>7</li>
-              <li>8</li>
-              <li>9</li>
-              <li>10</li>
-              <li>11</li>
-              <li>12</li>
-              <li>13</li>
-              <li>14</li>
-              <li>15</li>
-              <li>16</li>
-              <li>17</li>
-              <li>18</li>
-              <li>19</li>
-              <li>20</li>
-            </ol>
-          </div>
-          <div class="navigation-buttons">
-            <button id="retroceder-btn">Retroceder</button>
-            <button id="avancar-btn">Avançar</button>
-          </div>
+        <div class="navigation-buttons">
+          <button id="retroceder-btn">Retroceder</button>
+          <button id="avancar-btn">Avançar</button>
         </div>
       </div>
     </main>
+    <footer>
+      <div class="listFooter">
+        <p class="listFooterTitle">Sociais</p>
+        <div class="footerSocial">
+          <a href="https://www.instagram.com/casacriatura" target="_blank">
+            <img
+              class="footerIcon"
+              src="./img/instagram-svgrepo-com.svg"
+              alt="icon de instagram"
+            />
+          </a>
+          <a
+            href="https://www.linkedin.com/company/casacriatura/"
+            target="_blank"
+          >
+            <img
+              class="footerIcon"
+              src="./img/linkedin-svgrepo-com.svg"
+              alt="icon de linkedin"
+            />
+          </a>
+          <a href="https://twitter.com/casacriatura" target="_blank">
+            <img
+              class="footerIcon"
+              src="/img/twitter-svgrepo-com.svg"
+              alt="icon do X"
+            />
+          </a>
+
+          <a href="https://casacriatura.com/" target="_blank">
+            <img
+              class="footerIcon"
+              src="/img/site-svgrepo-com.svg"
+              alt="Site da Casa Criatura"
+            />
+          </a>
+        </div>
+      </div>
+
+      <img class="logo" src="./img/VUCO_LOGO_NO_BG.png" alt="Logo Vuco" />
+
+      <div class="listFooter">
+        <p class="listFooterTitle">Onde nos encontrar</p>
+        <p class="footerLink">
+          Endereço: R. de São Bento, 344 - Carmo, Olinda - PE, 53020-060
+        </p>
+        <p class="footerLink">Telefone: (81) 98526-9632</p>
+        <p class="footerLink">Made by class Catolica 💗</p>
+      </div>
+    </footer>
     <div id="scoreModal" class="modal">
       <div class="modal-content">
         <div class="bg">
           <h2 id="modal-title"><b></b></h2>
           <p id="modal-message"></p>
-          <span class="close">&times;</span>
           <div class="button-container">
             <button id="restart-button">Reiniciar Quiz</button>
             <button id="home-button">Concluir e Voltar para Home</button>
           </div>
         </div>
-        <div class="blob"></div>    
+        <div class="blob"></div>
       </div>
     </div>
     <script src="./js/script.js"></script>

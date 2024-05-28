@@ -45,15 +45,23 @@ function exibirQuiz() {
       var opcaoItem = document.createElement("li");
       opcaoItem.classList.add("option");
       opcaoItem.setAttribute("data-pergunta", perguntaNumero);
-      opcaoItem.setAttribute("data-opcao", String.fromCharCode(97 + opcaoIndex));
-      opcaoItem.setAttribute("data-resposta", opcao.correta ? "correta" : "incorreta");
+      opcaoItem.setAttribute(
+        "data-opcao",
+        String.fromCharCode(97 + opcaoIndex)
+      );
+      opcaoItem.setAttribute(
+        "data-resposta",
+        opcao.correta ? "correta" : "incorreta"
+      );
       opcaoItem.innerHTML =
         '<input type="radio" name="q' +
         perguntaNumero +
         '" value="' +
         String.fromCharCode(97 + opcaoIndex) +
         '" ' +
-        (respostaSelecionada === String.fromCharCode(97 + opcaoIndex) ? 'checked="checked"' : "") +
+        (respostaSelecionada === String.fromCharCode(97 + opcaoIndex)
+          ? 'checked="checked"'
+          : "") +
         " /> " +
         opcao.texto;
       opcoesList.appendChild(opcaoItem);
@@ -69,7 +77,11 @@ function exibirQuiz() {
     quizContainer.appendChild(perguntaElement);
 
     if (respostasQuiz[perguntaNumero]) {
-      exibirFeedback(perguntaNumero, respostaSelecionada, respostasQuiz[perguntaNumero].resposta);
+      exibirFeedback(
+        perguntaNumero,
+        respostaSelecionada,
+        respostasQuiz[perguntaNumero].resposta
+      );
     }
   }
 
@@ -83,7 +95,7 @@ function exibirQuiz() {
 
       respostasQuiz[pergunta] = {
         opcaoSelecionada: opcaoSelecionada,
-        resposta: resposta
+        resposta: resposta,
       };
     });
   });
@@ -157,29 +169,43 @@ function exibirPontuacaoFinal() {
 
   // Definindo a mensagem e o título com base na pontuação
   if (pontuacaoFinal >= 18) {
-    modalTitle.innerHTML = '🏆 Excelente!';
-    modalMessage.innerHTML = 'Sua pontuação final é ' + pontuacaoFinal + ' de ' + totalPerguntas + '.<br><br>Você conhece profundamente a cultura do Recife! Parabéns pelo seu excelente desempenho! 🌟';
+    modalTitle.innerHTML = "🏆 Excelente!";
+    modalMessage.innerHTML =
+      "Sua pontuação final é " +
+      pontuacaoFinal +
+      " de " +
+      totalPerguntas +
+      ".<br><br>Você conhece profundamente a cultura do Recife! Parabéns pelo seu excelente desempenho! 🌟";
   } else if (pontuacaoFinal >= 14) {
-    modalTitle.innerHTML = '🎉 Bom trabalho!';
-    modalMessage.innerHTML = 'Sua pontuação final é ' + pontuacaoFinal + ' de ' + totalPerguntas + '.<br><br>Você tem um bom conhecimento sobre a cultura do Recife. Continue assim e você se tornará um expert! 🏖️';
+    modalTitle.innerHTML = "🎉 Bom trabalho!";
+    modalMessage.innerHTML =
+      "Sua pontuação final é " +
+      pontuacaoFinal +
+      " de " +
+      totalPerguntas +
+      ".<br><br>Você tem um bom conhecimento sobre a cultura do Recife. Continue assim e você se tornará um expert! 🏖️";
   } else if (pontuacaoFinal >= 8) {
-    modalTitle.innerHTML = '🌟 Razoável!';
-    modalMessage.innerHTML = 'Sua pontuação final é ' + pontuacaoFinal + ' de ' + totalPerguntas + '.<br><br>Você tem um conhecimento básico sobre a cultura do Recife. Que tal aprender mais e tentar novamente? 📚';
+    modalTitle.innerHTML = "🌟 Razoável!";
+    modalMessage.innerHTML =
+      "Sua pontuação final é " +
+      pontuacaoFinal +
+      " de " +
+      totalPerguntas +
+      ".<br><br>Você tem um conhecimento básico sobre a cultura do Recife. Que tal aprender mais e tentar novamente? 📚";
   } else {
-    modalTitle.innerHTML = '💪 Continue tentando!';
-    modalMessage.innerHTML = 'Sua pontuação final é ' + pontuacaoFinal + ' de ' + totalPerguntas + '.<br><br>Não desanime! Recife tem muito a oferecer e aprender sobre sua cultura é uma jornada. Vamos tentar novamente? 🌍';
+    modalTitle.innerHTML = "💪 Continue tentando!";
+    modalMessage.innerHTML =
+      "Sua pontuação final é " +
+      pontuacaoFinal +
+      " de " +
+      totalPerguntas +
+      ".<br><br>Não desanime! Recife tem muito a oferecer e aprender sobre sua cultura é uma jornada. Vamos tentar novamente? 🌍";
   }
 
   modal.style.display = "flex"; // Altera o estilo para flex
 
-  // Definir evento de clique para fechar o modal
-  var span = document.getElementsByClassName("close")[0];
-  span.onclick = function() {
-    modal.style.display = "none";
-  }
-
-   // Botão para reiniciar o quiz
-   restartButton.onclick = function() {
+  // Botão para reiniciar o quiz
+  restartButton.onclick = function () {
     modal.style.display = "none";
     paginaAtual = 1; // Reinicia a página atual
     // perguntasSelecionadas = perguntasEmbaralhadas.slice(); // Reinicia as perguntas
@@ -187,22 +213,21 @@ function exibirPontuacaoFinal() {
     // exibirQuiz(); // Exibe o quiz
     limparRespostasArmazenadas(); // Limpa as respostas armazenadas
     window.scrollTo(0, 0); // Rolagem para o topo da página
-  }
+  };
 
   // Botão para concluir e voltar para a home
-  homeButton.onclick = function() {
+  homeButton.onclick = function () {
     modal.style.display = "none";
     window.location.href = "index.html";
-  }
+  };
 
   // Fecha o modal se clicar fora da área do modal
-  window.onclick = function(event) {
+  window.onclick = function (event) {
     if (event.target == modal) {
       modal.style.display = "none";
     }
-  }
+  };
 }
-
 
 function shuffleArray(array) {
   for (var i = array.length - 1; i > 0; i--) {
@@ -242,10 +267,9 @@ function exibirFeedback(pergunta, opcaoSelecionada, resposta) {
       )
       .classList.add("correct");
   } else {
-    var respostaCorreta = document
-      .querySelector(
-        '.option[data-pergunta="' + pergunta + '"][data-resposta="correta"]'
-      );
+    var respostaCorreta = document.querySelector(
+      '.option[data-pergunta="' + pergunta + '"][data-resposta="correta"]'
+    );
     feedbackDiv.innerHTML =
       "<span class='incorrect'>&#x2718; Errado! A resposta correta era: " +
       respostaCorreta.innerText +
@@ -274,4 +298,6 @@ fetch("data/perguntas.json")
   .catch((error) => console.error("Erro ao carregar as perguntas:", error));
 
 document.getElementById("avancar-btn").addEventListener("click", avancarPagina);
-document.getElementById("retroceder-btn").addEventListener("click", retrocederPagina);
+document
+  .getElementById("retroceder-btn")
+  .addEventListener("click", retrocederPagina);

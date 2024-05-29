@@ -31,12 +31,12 @@ function exibirQuiz() {
     perguntaElement.innerHTML =
       "<h3>" + perguntaNumero + ". " + pergunta.pergunta + "</h3>";
 
-    if (pergunta.imagem) {
-      var imagemElement = document.createElement("img");
-      imagemElement.src = pergunta.imagem;
-      imagemElement.alt = "Imagem da pergunta " + perguntaNumero;
-      perguntaElement.appendChild(imagemElement);
-    }
+    // if (pergunta.imagem) {
+    //   var imagemElement = document.createElement("img");
+    //   imagemElement.src = pergunta.imagem;
+    //   imagemElement.alt = "Imagem da pergunta " + perguntaNumero;
+    //   perguntaElement.appendChild(imagemElement);
+    // }
 
     var opcoesList = document.createElement("ul");
     opcoesList.classList.add("options");
@@ -255,35 +255,35 @@ function exibirFeedback(pergunta, opcaoSelecionada, resposta) {
       opt.classList.remove("correct", "incorrect");
     });
 
-  if (resposta === "correta") {
-    feedbackDiv.innerHTML = "<span class='correct'>&#x2714; Correto!</span>";
-    document
-      .querySelector(
-        '.option[data-pergunta="' +
-          pergunta +
-          '"][data-opcao="' +
-          opcaoSelecionada +
-          '"]'
-      )
-      .classList.add("correct");
-  } else {
-    var respostaCorreta = document.querySelector(
-      '.option[data-pergunta="' + pergunta + '"][data-resposta="correta"]'
-    );
-    feedbackDiv.innerHTML =
-      "<span class='incorrect'>&#x2718; Errado! A resposta correta era: " +
-      respostaCorreta.innerText +
-      "</span>";
-    document
-      .querySelector(
-        '.option[data-pergunta="' +
-          pergunta +
-          '"][data-opcao="' +
-          opcaoSelecionada +
-          '"]'
-      )
-      .classList.add("incorrect");
-  }
+  // if (resposta === "correta") {
+  //   feedbackDiv.innerHTML = "<span class='correct'>&#x2714; Correto!</span>";
+  //   document
+  //     .querySelector(
+  //       '.option[data-pergunta="' +
+  //         pergunta +
+  //         '"][data-opcao="' +
+  //         opcaoSelecionada +
+  //         '"]'
+  //     )
+  //     .classList.add("correct");
+  // } else {
+  //   var respostaCorreta = document.querySelector(
+  //     '.option[data-pergunta="' + pergunta + '"][data-resposta="correta"]'
+  //   );
+  //   feedbackDiv.innerHTML =
+  //     "<span class='incorrect'>&#x2718; Errado! A resposta correta era: " +
+  //     respostaCorreta.innerText +
+  //     "</span>";
+  //   document
+  //     .querySelector(
+  //       '.option[data-pergunta="' +
+  //         pergunta +
+  //         '"][data-opcao="' +
+  //         opcaoSelecionada +
+  //         '"]'
+  //     )
+  //     .classList.add("incorrect");
+  // }
 }
 
 fetch("data/perguntas.json")

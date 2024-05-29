@@ -24,12 +24,26 @@ html {
 
 }
 
+@media (max-width: 767px) {
+  .titulo {
+    font-size: 1.8rem;
+  }
+  .descrição {
+    font-size: 1rem;
+  }
+}
+
 .descrição{
   max-width: 768px;
 }
 .titulo {
   position: relative;
   display: inline-block;
+}
+
+#patrocinadores .content, #quiz .content {
+  padding: 20px;
+  text-align: center;
 }
 
 .titulo::after {
@@ -153,8 +167,8 @@ nav a:hover::after {
 
 
 .img_mapa {
-  width: 100vw;
-  height: 600px;
+  width: 100%;
+  height: auto;
 }
 
 /* SECTION PATROCINADORES */
@@ -266,10 +280,11 @@ nav a:hover::after {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin-bottom: 3rem;
+  margin-bottom: auto;
   
   /* Alinha os itens verticalmente no centro */
 }
+
 .content{
     max-width: 1200px;
     display: flex;

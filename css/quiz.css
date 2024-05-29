@@ -3,7 +3,7 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
 }
 
 /* Estilos globais */
@@ -49,7 +49,7 @@ nav a {
 }
 
 nav a::after {
-  content: '';
+  content: "";
   position: absolute;
   bottom: -5px;
   left: 0;
@@ -72,6 +72,7 @@ nav a:hover::after {
 .img_menu {
   display: none;
 }
+
 #respostas {
   display: none;
   margin-top: 30px;
@@ -94,13 +95,9 @@ nav a:hover::after {
 /* Estilos para as imagens das perguntas */
 .question img {
   max-width: 40%;
-  /* Garante que a imagem não ultrapasse o contêiner pai */
   height: auto;
-  /* Mantém a proporção da imagem */
   display: block;
-  /* Garante que a imagem fique centralizada horizontalmente */
   margin: 20px 10px;
-  /* Espaçamento entre a imagem e as opções de resposta */
   justify-self: left;
 }
 
@@ -169,7 +166,7 @@ nav a:hover::after {
 /* Estilos dos botões de navegação */
 button {
   padding: 10px 20px;
-  font-size: 16px;
+  font-size: 1rem; /* Use unidades responsivas */
   background-color: #4caf50;
   color: white;
   border: none;
@@ -227,14 +224,6 @@ button:hover {
   background-color: red;
   color: white;
   font-weight: bold;
-}
-
-/* Estilos para as imagens das perguntas */
-.question img {
-  max-width: 40%;
-  height: auto;
-  display: block;
-  margin: 20px 10px;
 }
 
 /* Estilos do footer */
@@ -372,18 +361,94 @@ footer {
 }
 
 /* Responsividade */
+@media (max-width: 1024px) {
+  .quiz-container {
+    padding: 1.5rem;
+  }
+
+  .question {
+    padding: 1rem;
+  }
+
+  .option {
+    font-size: 1rem;
+    padding: 0.75rem;
+  }
+
+  .navigation-buttons button {
+    font-size: 1rem;
+  }
+}
+
 @media (max-width: 768px) {
   .nav {
     display: none;
     flex-direction: column;
   }
+
   .img_menu {
     display: block;
+  }
+
+  button {
+    font-size: 4vw;
+  }
+
+  .option {
+    font-size: 3.5vw;
+  }
+
+  .question h3 {
+    font-size: 4vw;
+  }
+
+  .quiz-container {
+    padding: 1rem;
+  }
+
+  .question {
+    padding: 0.75rem;
+  }
+
+  .option {
+    padding: 0.75rem;
+  }
+
+  .navigation-buttons button {
+    font-size: 3.5vw;
   }
 }
 
 @media (max-width: 480px) {
   .nav a {
     padding: 5px;
+  }
+
+  button {
+    font-size: 5vw;
+  }
+
+  .option {
+    font-size: 4.5vw;
+  }
+
+  .question h3 {
+    font-size: 5vw;
+  }
+
+  .quiz-container {
+    padding: 0.75rem;
+  }
+
+  .question {
+    padding: 0.5rem;
+  }
+
+  .option {
+    padding: 0.5rem;
+  }
+
+  .navigation-buttons button {
+    font-size: 4.5vw;
   }
 }

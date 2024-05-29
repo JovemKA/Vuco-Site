@@ -37,3 +37,23 @@ var swiper = new Swiper(".slide-content", {
     },
   },
 });
+
+function showBar() {
+  let nav = document.querySelector(".nav");
+  let close = document.querySelector(".close_btn")
+
+  nav.classList.add("open");
+  console.log(nav.classList)
+  close.style.display = 'flex'
+  close.style.width = '50px'
+  close.style.height = '50px'
+  close.style.color = "black"
+
+}
+
+function closeBar() {
+  let nav = document.querySelector(".nav");
+  let close = document.querySelector(".close_btn")
+  nav.classList.remove("open");
+  close.style.display = 'none'
+}

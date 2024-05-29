@@ -1,11 +1,11 @@
 * {
   box-sizing: border-box;
   margin: 0;
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
   padding: 0;
 }
 
-body{
+body {
   line-height: 1.5;
 }
 
@@ -21,7 +21,6 @@ html {
   width: 50%;
   gap: 1.5rem;
   max-width: 610px;
-
 }
 
 @media (max-width: 767px) {
@@ -33,7 +32,7 @@ html {
   }
 }
 
-.descrição{
+.descrição {
   max-width: 768px;
 }
 .titulo {
@@ -41,13 +40,14 @@ html {
   display: inline-block;
 }
 
-#patrocinadores .content, #quiz .content {
+#patrocinadores .content,
+#quiz .content {
   padding: 20px;
   text-align: center;
 }
 
 .titulo::after {
-  content: '';
+  content: "";
   position: absolute;
   left: 0;
   bottom: 0;
@@ -55,13 +55,13 @@ html {
   border-bottom: 4px solid #69d6de;
 }
 
-.titulo-sobre{
+.titulo-sobre {
   position: relative;
   display: inline-block;
 }
 
-.titulo-sobre::after{
-  content: '';
+.titulo-sobre::after {
+  content: "";
   position: absolute;
   left: 0;
   bottom: 0;
@@ -70,7 +70,7 @@ html {
 }
 /* Estilo geral do header */
 header {
-  background: linear-gradient(to right,#1b8cbc, #69d6de);
+  background: linear-gradient(to right, #1b8cbc, #69d6de);
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   display: flex;
   justify-content: space-between;
@@ -84,7 +84,7 @@ header {
   border-radius: 15px;
 }
 
-main{
+main {
   padding-top: 80px;
 }
 nav {
@@ -103,7 +103,7 @@ nav a {
 }
 
 nav a::after {
-  content: '';
+  content: "";
   position: absolute;
   bottom: -5px;
   left: 0;
@@ -136,12 +136,11 @@ nav a:hover::after {
   margin: 4rem 3rem;
 }
 
-.img_sobre, .img_grupo {
+.img_sobre,
+.img_grupo {
   width: 500px;
-  margin: 0px 0.7rem; 
+  margin: 0px 0.7rem;
 }
-
-
 
 /* SECTION INFO DO GRUPO */
 
@@ -154,7 +153,6 @@ nav a:hover::after {
   flex-direction: column;
 }
 
-
 /* SECTION DO MAPA */
 #mapa {
   display: flex;
@@ -164,7 +162,6 @@ nav a:hover::after {
   gap: 1.6rem;
   padding: 3rem;
 }
-
 
 .img_mapa {
   width: 100%;
@@ -182,28 +179,20 @@ nav a:hover::after {
   gap: 1rem;
 }
 
-.imgPatrocinadores{
+.imgPatrocinadores {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-
-
 }
 
-.imgLogoPatrocinadores{
+.imgLogoPatrocinadores {
   width: 250px;
   height: 150px;
   fill: black;
-
-
 }
 
-
-
-
 /* Container para centralizar o conteúdo */
-
 
 /* Logo do Airbnb
 .logo {
@@ -213,8 +202,8 @@ nav a:hover::after {
 .logo img {
   width: 150px;
   /* Ajusta a largura do logo */
-  /* height: auto; */
-  /* Mantém a proporção da altura */
+/* height: auto; */
+/* Mantém a proporção da altura */
 /* } */
 
 /* Menu de usuário (sem links) */
@@ -263,16 +252,10 @@ nav a:hover::after {
 
 /* SECTION QUIZ */
 .container {
-  max-width: 100%;
-  /* Limita a largura do container */
-  margin: 0 auto;
-  /* Centraliza o container na tela */
   display: flex;
-  /* Define layout flexbox */
   justify-content: center;
-  /* Centraliza os itens na horizontal */
   align-items: center;
-  /* Alinha os itens verticalmente no centro */
+  padding: 25px;
 }
 
 #quiz {
@@ -281,17 +264,17 @@ nav a:hover::after {
   justify-content: center;
   align-items: center;
   margin-bottom: auto;
-  
+
   /* Alinha os itens verticalmente no centro */
 }
 
-.content{
-    max-width: 1200px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    margin-top: 50px;
+.content {
+  max-width: 1200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 50px;
 }
 
 /* SECTION FOOTER */
@@ -305,8 +288,7 @@ footer {
   padding: 2rem 2rem;
 }
 
-
-.listFooterTitle{
+.listFooterTitle {
   font-weight: 450;
   font-size: 1.3rem;
   color: rgb(83, 83, 83);
@@ -317,7 +299,6 @@ footer {
   font-weight: 350;
   text-decoration: none;
   color: black;
-
 }
 
 .listFooter {
@@ -351,7 +332,7 @@ footer {
   width: 250px;
 }
 
-/* BUTTON QUIZ */ 
+/* BUTTON QUIZ */
 
 a {
   text-decoration: none;
@@ -368,7 +349,7 @@ a {
   background-color: inherit;
   border-radius: 100px;
   font-weight: 600;
-  color: #049ce4 ;
+  color: #049ce4;
   box-shadow: 0 0 0 2px #049ce4;
   cursor: pointer;
   overflow: hidden;
@@ -445,21 +426,21 @@ a {
 }
 
 @media (max-width: 1125px) {
-  #sobre {
+  #sobre,
+  #quiz {
     display: flex;
     flex-direction: column;
     text-align: center;
-
   }
 
-  .content {
+  .content,
+  #container {
     width: auto;
   }
-
 }
 
 @media (max-width: 915px) {
-   #mapa {
+  #mapa {
     display: flex;
     flex-direction: column;
   }
@@ -467,13 +448,11 @@ a {
   /* #sobre {
     text-align: center;
   } */
-
-
 }
 
 @media (max-width: 761px) {
   .img_menu {
-    display:block;
+    display: block;
     width: 50px;
     margin-right: 1rem;
   }
@@ -495,7 +474,7 @@ a {
   }
 
   .open {
-    display: flex  ;
+    display: flex;
     position: fixed;
     top: 5vh;
     width: 100%;
@@ -504,16 +483,13 @@ a {
     left: 0;
     flex-direction: column;
     gap: 1.3rem;
-    transition: all .5s;
-
-    
+    transition: all 0.5s;
   }
 
   /* header {
     position: fixed;
     margin-inline: 50px;
   } */
-
 }
 
 @media (max-width: 686px) {
@@ -524,7 +500,7 @@ a {
   }
 
   footer:nth-child(2) {
-    order:1
+    order: 1;
   }
 
   .listFooter {
@@ -532,18 +508,20 @@ a {
   }
 }
 
-
 @media (max-width: 500px) {
-  .img_grupo, .img_sobre {
+  .img_grupo,
+  .img_sobre {
     width: 400px;
   }
-  .titulo-sobre::after{
+  .titulo-sobre::after {
     width: 25%;
   }
 }
 
 @media (max-width: 425px) {
-  .img_grupo, .img_sobre, .img_mapa {
+  .img_grupo,
+  .img_sobre,
+  .img_mapa {
     width: 350px;
   }
 
@@ -554,10 +532,11 @@ a {
 }
 
 @media (max-width: 400px) {
-  .titulo-sobre::after{
+  .titulo-sobre::after {
     width: 50%;
   }
 }
+
 
 /* Estiliza a largura da barra de rolagem */
 ::-webkit-scrollbar {

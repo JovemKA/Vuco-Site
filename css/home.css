@@ -170,6 +170,20 @@ nav a:hover::after {
   height: auto;
 }
 
+#animações {
+display: flex;
+flex-direction: column;
+align-items: center;
+gap: 1.6rem;
+}
+
+#jogo {
+  display: flex;
+  flex-direction: column; 
+  align-items: center;
+  gap: 1.6rem;
+}
+
 /* SECTION PATROCINADORES */
 
 #patrocinadores {

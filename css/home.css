@@ -293,6 +293,21 @@ gap: 1.6rem;
   margin-top: 50px;
 }
 
+.video-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+  margin: 0 auto;
+  flex-wrap: wrap;
+}
+
+video {
+  max-width: 100%;
+  height: auto;
+}
+
 /* SECTION FOOTER */
 /* SECTION FOOTER */
 footer {
